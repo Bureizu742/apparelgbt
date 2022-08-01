@@ -8,7 +8,7 @@
 
   	* addOrder, updateUser, and updateProduct added to type def mutations (Jala) ✔️
 
-  	* Query for categories, products, and order (Connor)
+  	* Query for categories, products, and order (Connor) 
   	Stripe API checkout query (Group)
 
   	* addOrder, updateUser, and updateProduct added to query mutations (Connor)

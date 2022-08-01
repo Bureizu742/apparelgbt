@@ -2,6 +2,7 @@ const { AuthenticationError } = require('apollo-server-express');
 const { stripIgnoredCharacters } = require('graphql');
 const { User, Category, Product, Order } = require('../models');
 const { signToken } = require('../utils/auth');
+const stripe = require('stripe')('sk_test_4eC39HqLyjWDarjtT1zdp7dc');
 
 const resolvers = {
   Query: {
@@ -56,13 +57,13 @@ const resolvers = {
       const { products } = await order.populate('products');
 
       for (let i = 0; i < products.length; i++) {
-        const product = await stripIgnoredCharacters.products.create({
+        const product = await stripe.products.create({
           name: products[i].name,
           description: products[i].description,
           images: [`${url}/imaegs/${products[i].image}`]
         });
 
-        const price = await stripIgnoredCharacters.prices.create({
+        const price = await stripe.prices.create({
           product: product.id,
           unit_amount: products[i].price * 100,
           currency: 'usd'
@@ -74,7 +75,7 @@ const resolvers = {
         });
       }
 
-      const session = await stripIgnoredCharacters.checkout.sessions.create({
+      const session = await stripe.checkout.sessions.create({
         payment_methods_types: ['card'],
         line_items,
         mode: 'payments',
@@ -104,13 +105,6 @@ const resolvers = {
 
       throw new AuthenticationError('Need to be logged in');
     },
-    updateProduct: async (parent, { _id, quantity }) => {
-      const decrement = math.abs(quantity) * -1;
-
-      return await Product.findByIdAndUpdate(_id,
-        { $inc: { quantity: decrement } },
-        { new: true });
-    },
     updateUser: async (parent, args, context) => {
       if (context.user) {
         return await User.findByIdAndUpdate(context.user._id, args,
@@ -119,6 +113,12 @@ const resolvers = {
 
       throw new AuthenticationError('Need to be logged in');
     },
+    updateProduct: async (parent, { _id, quantity }) => {
+      const decrement = Math.abs(quantity) * -1;
+
+      return await Product.findByIdAndUpdate(_id, { $inc: { quantity: decrement } }, { new: true });
+    },
+    
     login: async (_, { email, password }) => {
       const user = await User.findOne({ email });
 
