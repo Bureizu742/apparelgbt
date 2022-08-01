@@ -8,24 +8,24 @@
 
   	* addOrder, updateUser, and updateProduct added to type def mutations (Jala) ✔️
 
-  	* Query for categories, products, and order (Connor) 
-  	Stripe API checkout query (Group)
+  	* Query for categories, products, and order (Connor) ✔️ 
+  	Stripe API checkout query (Group) ✔️
 
-  	* addOrder, updateUser, and updateProduct added to query mutations (Connor)
-*	Seeders: (Whoever finishes first)
-  	* Seed categories
-  	* Seed products 
-    * Seed users 
+  	* addOrder, updateUser, and updateProduct added to query mutations (Connor) ✔️
+*	Seeders: (Whoever finishes first) ✔️
+  	* Seed categories ✔️
+  	* Seed products ✔️
+    * Seed users ✔️
 
 # Day Two: 💻
 *	HEROKU TEST DEPLOY DAY (Group)
 *	Settle site theme (Group, done no  later than 11am)
-*	Import asseets (Group)
+*	Import assets (Group)
 *	Components (Written, not styled):
     *	Navbar/banner, carousel, cart/cart items (Jala)
     * Product items, product list, delete button (Connor)
     * Category menu, footer (Patrick)
-*	Uitls: 
+*	Utils: 
     * Queries, mutations (Jala)
   	* Actions, helpers (Patrick)
     * Auth, global state, reducers (Charles)
