@@ -1,7 +1,27 @@
 [
   {
-    "username": "testuser",
-    "email": "test@user.com",
-    "password": "password1234"
+      "username": "LiliVanilli",
+      "email": "lillian123@email.com",
+      "password": "passcode1234"
+  },
+  {
+      "username": "Jalanicus",
+      "email": "unterjal@email.com",
+      "password": "password123"
+  },
+  {
+      "username": "JohnConnor",
+      "email": "connordude@email.com",
+      "password": "passphrase123"
+  },
+  {
+      "username": "CharlieDaDude",
+      "email": "dadude@email.com",
+      "password": "passwerd123"
+  },
+  {
+      "username": "generictestuser69",
+      "email": "thisisatest@email.com",
+      "password": "passstring123"
   }
 ]
