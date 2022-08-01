@@ -4,34 +4,39 @@
         "description": "This is a default description",
         "image": "TODO",
         "price": 24.50,
-        "quantity": 5
+        "quantity": 5,
+        "category": "category[0]._id"
     },
     {
         "name": "Item Name 2",
         "description": "This is a default description",
         "image": "TODO",
         "price": 24.51,
-        "quantity": 5
+        "quantity": 5,
+        "category": "category[0]._id"
     },
     {
         "name": "Item Name 3",
         "description": "This is a default description",
         "image": "TODO",
         "price": 24.52,
-        "quantity": 5
+        "quantity": 5,
+        "category": "category[0]._id"
     },
     {
         "name": "Item Name 4",
         "description": "This is a default description",
         "image": "TODO",
         "price": 24.53,
-        "quantity": 5
+        "quantity": 5,
+        "category": "category[0]._id"
     },
     {
         "name": "Item Name 5",
         "description": "This is a default description",
         "image": "TODO",
         "price": 24.54,
-        "quantity": 5
+        "quantity": 5,
+        "category": "category[0]._id"
     }
 ]
