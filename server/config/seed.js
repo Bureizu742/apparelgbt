@@ -8,7 +8,8 @@ db.once('open', async () => {
     { name: 'Tops' },
     { name: 'Bottoms' },
     { name: 'Skirts/Dresses' },
-    { name: 'Accessories' }
+    { name: 'Accessories' },
+    { name: 'Misc' }
   ]);
 
   console.log('Categories Seeded!');
