@@ -1,5 +1,9 @@
 import React from 'react';
-import {ShoppingCartOutlined } from '@material-ui/icons';
+import { Link } from 'react-router-dom';
+import { useStoreContext } from '../utils/GlobalState';
+import { ADD_TO_CART, UPDATE_CART_QUANTITY } from '../utils/actions';
+import { idbPromise } from '../utils/helpers';
+import { ShoppingCartOutlined } from '@material-ui/icons';
 import path from 'path';
 
 import styled from 'styled-components';
@@ -60,15 +64,52 @@ const Icon = styled.div`
 `;
 
 
-function ProdItems({ image }) {
+function ProdItems(item, { image }) {
+  const [state, dispatch] = useStoreContext();
+
+  const {
+    name,
+    _id,
+    price,
+    quantity
+  } = item;
+
+  const { cart } = state
+
+  const addToCart = () => {
+    const itemInCart = cart.find((cartItem) => cartItem._id === _id)
+    if (itemInCart) {
+      dispatch({
+        type: UPDATE_CART_QUANTITY,
+        _id: _id,
+        purchaseQuantity: parseInt(itemInCart.purchaseQuantity) + 1
+      });
+      idbPromise('cart', 'put', {
+        ...itemInCart,
+        purchaseQuantity: parseInt(itemInCart.purchaseQuantity) + 1
+      });
+    } else {
+      dispatch({
+        type: ADD_TO_CART,
+        product: { ...item, purchaseQuantity: 1 }
+      });
+      idbPromise('cart', 'put', { ...item, purchaseQuantity: 1 });
+    }
+  }
   return (
     <Container>
-      <Image src={`${path.join(process.env.PUBLIC_URL, image)}`}/>
+      <Link to={`/products/${_id}`} >
+        <p>{name}</p>
+      </Link>
+      <Image src={`${path.join(process.env.PUBLIC_URL, image)}`} />
       <Info>
-        <Icon> 
-          <ShoppingCartOutlined/>
+        <Icon>
+          <ShoppingCartOutlined />
         </Icon>
-        </Info> 
+      </Info>
+      <div>{quantity} in stock</div>
+      <div>${price}</div>
+      <button onClick={addToCart}>Add to cart</button>
     </Container>
   )
 }

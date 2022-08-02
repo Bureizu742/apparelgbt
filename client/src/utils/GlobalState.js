@@ -19,3 +19,4 @@ export const StoreProvider = ({ value = [], ...props }) => {
 export const useStoreContext = () => {
   return useContext(StoreContext);
 };
+
