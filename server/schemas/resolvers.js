@@ -36,8 +36,6 @@ const resolvers = {
 
       const products = await Product.find(params);
 
-      console.log('PRODUCTS', products);
-
       return products;
     },
     product: async () => {
