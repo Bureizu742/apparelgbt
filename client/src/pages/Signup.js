@@ -1,90 +1,77 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React from 'react'
+import styled from 'styled-components'
+import bg from '../images/jeansbg.jpeg'
+import { mobile } from "../responsive";
 
-import { useMutation } from '@apollo/client';
-import { ADD_USER } from '../utils/mutations';
+const Container = styled.div `
+  width: 100vw;
+  height: 100vh;
+  background: url(${bg});
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-color: #f3f5f4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
 
-import Auth from '../utils/auth';
+const Wrapper = styled.div `
+  width: 40%;
+  padding: 20px;
+  background-color: #cfcfc4;
+  ${mobile({ width: "75%" })}
+`;
 
-const Signup = () => {
-  const [formState, setFormState] = useState({
-    username: '',
-    email: '',
-    password: '',
-  });
-  const [addUser, { error, data }] = useMutation(ADD_USER);
+const Form = styled.form `
+  display: flex;
+  flex-wrap: wrap;
+`;
 
-  const handleChange = (event) => {
-    const { name, value } = event.target;
+const Title = styled.h1 `
+  font-size: 24px;
+  font-weight: bold;
+`;
 
-    setFormState({
-      ...formState,
-      [name]: value,
-    });
-  };
+const Input = styled.input `
+  flex: 1;
+  min-width: 40%;
+  margin: 10px 10px 0px 0px;
+  padding: 10px
+`;
 
-  const handleFormSubmit = async (event) => {
-    event.preventDefault();
+const Conditions = styled.span `
+  font-size: 15px;
+  margin: 20px 20px;
+`;
 
-    try {
-      const { data } = await addUser({
-        variables: { ...formState },
-      });
+const Button = styled.button `
+  width: 40%;
+  border: none;
+  padding: 15px 20px;
+  background-color: white;
+  cursor: pointer;
+`;
 
-      Auth.login(data.addUser.token);
-    } catch (e) {
-      console.error(e);
-    }
-  };
-
-  const renderForm = () => {
-    if (data) {
-      return (
-      <p>
-        Success! You may now head{' '}
-        <Link to="/">back to the homepage.</Link>
-      </p>
-      )
-    } 
-    return (
-      <form onSubmit={handleFormSubmit}>
-        <input
-          placeholder="Your username"
-          name="username"
-          type="text"
-          value={formState.name}
-          onChange={handleChange}
-        />
-        <input
-          placeholder="Your email"
-          name="email"
-          type="email"
-          value={formState.email}
-          onChange={handleChange}
-        />
-        <input
-          placeholder="******"
-          name="password"
-          type="password"
-          value={formState.password}
-          onChange={handleChange}
-        />
-        <button type="submit">
-          Submit
-        </button>
-      </form>
-    );
-  };
-
+function Signup () {
   return (
-    <main>
-      <h4>Sign Up</h4>
-      <div>
-        {renderForm()}
-        {error && <div>{error.message}</div>}
-      </div>
-    </main>
-  );
-};
+    <Container>
+      <Wrapper>
+        <Title> JOIN THE CLUB. </Title>
+        <Form>
+          <Input placeholder="first name"/>
+          <Input placeholder="last name"/>
+          <Input placeholder="username"/>
+          <Input placeholder="email"/>
+          <Input placeholder="password"/>
+          <Input placeholder="confirm password"/>
+          <Conditions> 
+            By creating an account, I state that I have read and understood the <b>terms and conditions</b>.
+          </Conditions>
+          <Button> CREATE ACCOUNT</Button>
+          </Form> 
+      </Wrapper>
+    </Container>
+  )
+}
 
-export default Signup;
+export default Signup

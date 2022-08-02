@@ -1,39 +1,30 @@
-// Node Modules
 import React from 'react';
-import { useQuery } from '@apollo/client';
-// Utilities
-import Auth from '../utils/auth';
-import { QUERY_USERS } from '../utils/queries';
-// Components
-import UserList from '../components/UserList';
+import Broadcast from '../components/Broadcast';
+import Navbar from '../components/Navbar';
+import Carousel from '../components/Carousel';
+import Categories from '../components/Categories';
+import Products from '../components/Products';
+import Newsleter from '../components/Newsletter';
+import Footer from '../components/Footer';
+import Social from '../components/Social';
 
-const Home = () => {
-  const { loading, data } = useQuery(QUERY_USERS);
-  const users = data?.users || [];
-
-  const renderUserList = () => {
-    if (loading) {
-      return <h2>Loading...</h2>
-    } else {
-      return <UserList users={users} title="List of Users" />
-    }
-  } 
-
-  const renderUsername = () => {
-    if (!Auth.loggedIn()) return null;
-    return Auth.getProfile().data.username;
-  }
-
+function Home() {
   return (
-    <main>
-      <div>
-        {renderUsername()}
-      </div>
-      <div>
-        {renderUserList()}
-      </div>
-    </main>
-  );
-};
+    <div>
+    <Broadcast />
+    <Navbar />
+    <Carousel />
+    <hr />
+    <Categories />
+    <hr />
+    <Products />
+    <hr />
+    <Social/>
+    <Newsleter />
+    <Footer />
+    </div>
+    
+  )
+}
 
-export default Home;
+export default Home

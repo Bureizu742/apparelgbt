@@ -19,8 +19,8 @@
 
 # Day Two: 💻
 *	HEROKU TEST DEPLOY DAY (Group)
-*	Settle site theme (Group, done no  later than 11am)
-*	Import assets (Group)
+*	Settle site theme (Group, done no  later than 11am)✔️
+*	Import assets (Group)✔️
 *	Components (Written, not styled):
     *	Navbar/banner, carousel, cart/cart items (Jala)
     * Product items, product list, delete button (Connor)
