@@ -60,12 +60,13 @@ const Right = styled.div`
   ${mobile({ flex: 2, justifyContent: "center" })}
 `;
 
-const NavLinks = styled.a  `
+const StyledLink = styled(Link)  `
 font-size: 14px;
   cursor: pointer;
   margin-left: 25px;
   font-weight: bold;
   color: black;
+  text-decoration: none;
   &:hover {
     color: black;
   }
@@ -91,14 +92,12 @@ function Navbar() {
           </SearchContainer>
         </Left>
         <Center> 
-          <Logo> formedright.
+          <Logo> appareLGBT.
             </Logo> 
             </Center>
         <Right>
-          <NavLinks> 
-          <Link to="/signup"> CREATE ACCOUNT </Link>
-          <Link to="/login"> LOGIN</Link>
-          </NavLinks>
+          <StyledLink to="/signup"> CREATE ACCOUNT </StyledLink>
+          <StyledLink to="/login"> LOGIN</StyledLink>
           <LinkItem> 
           <Badge badgeContent={4} color="secondary">
           <ShoppingCartOutlined />
