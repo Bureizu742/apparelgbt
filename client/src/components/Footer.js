@@ -69,8 +69,8 @@ function Footer() {
   return (
     <Container>
       <Left>
-        <Logo> formedright. </Logo>
-        <Description> we only source brands that make quality clothing, formed to last. our mission is sustainable, slow fashion.
+        <Logo> appareLGBT </Logo>
+        <Description> We only source brands that make quality clothing, formed to last. Our mission is sustainable, slow fashion for the LGBTQ+ community, made by the LGBTQ+ community.
         </Description>
         <Socials>
           <SocIcon color="c4aead">
@@ -89,19 +89,21 @@ function Footer() {
         <List>
           <ListItem>HOME</ListItem>
           <ListItem>CART </ListItem>
-          <ListItem>WOMENS</ListItem>
+          <ListItem>TOPS</ListItem>
+          <ListItem>BOTTOMS</ListItem>
+          <ListItem>SKIRTS/DRESSES</ListItem>
           <ListItem>ACCESSORIES</ListItem>
-          <ListItem>MENS</ListItem>
+          <ListItem>MISC</ListItem>
           <ListItem>MY ACCOUNT</ListItem>
           <ListItem>ORDERS</ListItem>
           <ListItem>TERMS</ListItem>
         </List>
       </Center>
       <Right>
-        <Title> Contact </Title>
-        <ContactItem> <Room style={{marginRight: "10px"}} /> 1111 NY, NY </ContactItem>
-        <ContactItem> <Phone style={{marginRight: "10px"}} /> 555-055-0254 </ContactItem>
-        <ContactItem> <MailOutline style={{marginRight: "10px"}} /> contact@formedwell.mail </ContactItem>
+        <Title> Contact Us </Title>
+        <ContactItem> <Room style={{marginRight: "10px"}} /> 8600 Los Angeles, CA </ContactItem>
+        <ContactItem> <Phone style={{marginRight: "10px"}} /> 123-069-0420 </ContactItem>
+        <ContactItem> <MailOutline style={{marginRight: "10px"}} /> contactus@apparelgbt.mail </ContactItem>
         <Payment src={payment} />
       </Right>
     </Container>

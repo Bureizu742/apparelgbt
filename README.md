@@ -27,7 +27,7 @@
     * Category menu, footer (Patrick)
 *	Utils: 
     * Queries, mutations (Jala)
-  	* Actions, helpers (Patrick)
+  	* Actions, helpers (Patrick) ✔️
     * Auth, global state, reducers (Charles)
 *	Src: 
     * Service worker, app.js (Connor)
