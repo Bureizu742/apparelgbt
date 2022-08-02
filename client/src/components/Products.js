@@ -29,8 +29,6 @@ function Products() {
 
   if (loading) return <h1>Loading...</h1>;
 
-  console.log('PRODUCTS', products);
-
   return (
     <> 
       <Title> SHOP OUR FAVORITES </Title>

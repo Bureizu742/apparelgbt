@@ -58,15 +58,18 @@ const InfoContainer = styled.div`
  padding: 50px;
   flex: 1;
 `;
+
 const Title = styled.h1`
   font-size: 70px;
 `;
+
 const Description = styled.p`
   margin: 50px 0px;
   font-size: 20px;
   font-weight: bold;
   font-style: italic;
 `;
+
 const Button = styled.button`
   padding: 10px;
   font-size: 20pz;
@@ -74,6 +77,19 @@ const Button = styled.button`
   cursor: pointer;
   border-radius: 10px;
 `;
+
+const StyledLink = styled(Link)  `
+font-size: 14px;
+  cursor: pointer;
+  font-weight: bold;
+  color: black;
+  text-decoration: none;
+  &:hover {
+    color: black;
+  }
+  ${mobile({ fontSize: "12px", marginLeft: "10px" })}
+`
+
 function Carousel() {
   const [carouselIndex, setCarouselIndex] = useState(0);
   const handleclick = (direction) => {
@@ -99,8 +115,8 @@ function Carousel() {
             <Title> {item.title}</Title>
             <Description>{item.description} </Description>
             <Button> 
-              <Link to= "/products"> SHOP NOW 
-              </Link></Button>
+              <StyledLink to= "/products"> SHOP NOW 
+              </StyledLink></Button>
           </InfoContainer>
         </CarouselContainer>
           ))}

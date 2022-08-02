@@ -39,13 +39,15 @@ const SearchContainer = styled.div`
   margin-left: 25px;
   padding: 5px;
 `;
+
 const Input = styled.input`
   border: none;
   ${mobile({ width: "50px" })}
-`
+`;
 const Center = styled.div`
   flex: 1;
   text-align: center;
+  margin-left: 200px;
 `;
 
 const Logo = styled.h1`
@@ -53,6 +55,7 @@ font-weight: bold;
 font-style: italic;
 ${mobile({ fontSize: "24px" })}
 `;
+
 const Right = styled.div`
   flex: 1;
   display: flex;
@@ -113,11 +116,13 @@ function Navbar() {
             </Logo> 
             </Center>
         <Right>
+          <Link to="/cart">
           <LinkItem> 
           <Badge badgeContent={4} color="secondary">
           <ShoppingCartOutlined />
           </Badge>
           </LinkItem>
+          </Link>
         </Right>
         <nav>
         {loggedInNav()}

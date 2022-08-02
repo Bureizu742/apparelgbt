@@ -22,11 +22,11 @@
 *	Settle site theme (Group, done no  later than 11am)✔️
 *	Import assets (Group)✔️
 *	Components (Written, not styled):
-    *	Navbar/banner, carousel, cart/cart items (Jala)
-    * Product items, product list, delete button (Connor)
-    * Category menu, footer (Patrick)
+    *	Navbar/banner ✔️, carousel, cart/cart items (Jala)
+    * Product items✔️, product list, delete button (Connor)
+    * Category menu, footer ✔️(Patrick)
 *	Utils: 
-    * Queries, mutations (Jala)
+    * Queries, mutations (Jala) ✔️
   	* Actions, helpers (Patrick) ✔️
     * Auth, global state, reducers (Charles)
 *	Src: 

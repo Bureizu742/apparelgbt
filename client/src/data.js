@@ -2,7 +2,7 @@ import path from 'path';
 const { PUBLIC_URL } = process.env;
 const imgOne = `${path.join(PUBLIC_URL,'assets/misc/minflags.jpeg')}`;
 const imgTwo = `${path.join(PUBLIC_URL,'assets/sets/loungepaired.jpeg')}`;
-const imgThree = `${path.join(PUBLIC_URL,'assets/misc/flag.jpeg')}`;
+const imgThree = `${path.join(PUBLIC_URL,'assets/bottoms/denim.jpeg')}`;
 const jeans = `${path.join(PUBLIC_URL,'assets/bottoms/jeanspair1.jpeg')}`
 const tops = `${path.join(PUBLIC_URL,'assets/tops/hoodiespaired.jpeg')}`
 const sets = `${path.join(PUBLIC_URL,'assets/sets/flagsuit.jpeg')}`
@@ -20,20 +20,20 @@ export const carouselItems = [
   {
   id: 1,
   img: imgOne,
-  title: "GOODBYE, SUMMER",
-  description: "20% OFF ALL SUMMER ITEMS",
+  title: "RAINBOW COLLECTION",
+  description: "20% OFF THROUGH JUNE",
 },
   {
   id: 2,
   img: imgTwo,
-  title: "HELLO, FALL",
+  title: "COZY COLLECTION",
   description: "SHOP OUR NEW DROPS",
 },
   {
   id: 3,
   img: imgThree,
   title: "DENIM DARLINGS",
-  description: "SELECT JEANS UP TO 40%,"
+  description: "SELECT JEANS UP TO 40% OFF",
 },
 ]
 
