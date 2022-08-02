@@ -1,18 +1,18 @@
 import imgOne from './assets/misc/minflags.jpeg';
-import imgTwo from './assets/sets/loungepaired.webp';
-import imgThree from './assets/misc/flag.webp';
+import imgTwo from './assets/sets/loungepaired.jpeg';
+import imgThree from './assets/misc/flag.jpeg';
 import jeans from './assets/bottoms/jeanspair1.jpeg'
 import tops from './assets/tops/hoodiespaired.jpeg'
 import sets from './assets/sets/flagsuit.jpeg'
 import set1 from './assets/sets/linenset.jpeg'
-import mset1 from './assets/sets/loungepaired2.webp'
+import mset1 from './assets/sets/loungepaired2.jpeg'
 import miset2 from './assets/sets/suits.jpeg'
 import top5 from './assets/tops/linentops.jpeg'
-import top4 from './assets/tops/lovetree.jpeg'
+import top4 from './assets/tops/lovetee.jpeg'
 import top3 from './assets/tops/noshirtpaired.jpeg'
-import jeans2 from './assets/misc/stickers.webp'
-import wsocial from './assets/misc/nonbracelet.webp'
-import jeans1 from './assets/misc/plusflags.jpeg'
+import jeans2 from './assets/misc/stickers.jpeg'
+import wsocial from './assets/misc/nonbracelet.jpeg'
+import jeans1 from './assets/misc/plusflag.jpeg'
 
 export const carouselItems = [
   {

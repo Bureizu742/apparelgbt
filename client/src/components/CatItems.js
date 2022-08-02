@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components';
 import { mobile } from "../responsive";
-
+import { tablet } from "../responsive";
 
 const Container = styled.div`
   flex: 1;
@@ -30,6 +30,8 @@ const Title = styled.h1`
   color: white;
   margin-bottom: 25px;
   font-size: 70px;
+  ${mobile({ fontSize: "30px"})}
+  ${tablet({ fontSize: "35px"})}
 `;
 const Button = styled.button`
   border: none;

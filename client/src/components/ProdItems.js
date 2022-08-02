@@ -1,4 +1,4 @@
-import { FavoriteBorderOutlined, SearchOutlined, ShoppingCartOutlined } from '@material-ui/icons';
+import {ShoppingCartOutlined } from '@material-ui/icons';
 import React from 'react'
 
 import styled from 'styled-components';
@@ -66,12 +66,6 @@ function ProdItems({item}) {
       <Info>
         <Icon> 
           <ShoppingCartOutlined/>
-        </Icon>
-        <Icon> 
-          <SearchOutlined/>
-        </Icon>
-        <Icon> 
-          <FavoriteBorderOutlined/>
         </Icon>
         </Info> 
     </Container>
