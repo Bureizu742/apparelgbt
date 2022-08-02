@@ -10,9 +10,9 @@ import miset2 from './assets/sets/suits.jpeg'
 import top5 from './assets/tops/linentops.jpeg'
 import top4 from './assets/tops/lovetee.jpeg'
 import top3 from './assets/tops/noshirtpaired.jpeg'
-import jeans2 from './assets/misc/stickers.jpeg'
-import wsocial from './assets/misc/nonbracelet.jpeg'
-import jeans1 from './assets/misc/plusflag.jpeg'
+// import jeans2 from './assets/misc/stickers.jpeg'
+// import wsocial from './assets/misc/nonbracelet.jpeg'
+// import jeans1 from './assets/misc/plusflag.jpeg'
 
 export const carouselItems = [
   {
@@ -77,20 +77,5 @@ export const topProducts = [
   {
     id: 6,
     img: top3,
-  },
-]
-
-export const socialItems = [
-  {
-    id: 1,
-    img: jeans2,
-  },
-  {
-    id: 2,
-    img: wsocial,
-  },
-  {
-    id: 3,
-    img: jeans1,
   },
 ]

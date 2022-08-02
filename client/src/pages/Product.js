@@ -4,7 +4,6 @@ import Navbar from '../components/Navbar'
 import Broadcast from '../components/Broadcast'
 import Newsletter from '../components/Newsletter'
 import Footer from '../components/Footer'
-import set1 from '../images/womens/set1.jpeg'
 import { Add, Remove } from '@material-ui/icons'
 import { mobile } from "../responsive";
 
@@ -20,11 +19,11 @@ const ImageContainer = styled.div`
   flex: 1;
 `;
 
-const Image = styled.img`
-  width: 100%;
-  height: 90vh;
-  object-fit: cover;
-`;
+// const Image = styled.img`
+//   width: 100%;
+//   height: 90vh;
+//   object-fit: cover;
+// `;
 
 const Info = styled.div`
   flex: 1;
@@ -111,6 +110,8 @@ const Button = styled.button`
   background-color: #e0e2e6;
 }
 `;
+
+
 function Product() {
   return (
     <Container>
@@ -118,7 +119,7 @@ function Product() {
       <Broadcast />
       <Wrapper>
         <ImageContainer>
-          <Image src={set1} />
+          {/* <Image src={products.image} /> */}
         </ImageContainer>
         <Info>
           <Title> LINEN PANTSUIT </Title>

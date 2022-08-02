@@ -1,5 +1,6 @@
+import React from 'react';
 import {ShoppingCartOutlined } from '@material-ui/icons';
-import React from 'react'
+import path from 'path';
 
 import styled from 'styled-components';
 
@@ -59,10 +60,10 @@ const Icon = styled.div`
 `;
 
 
-function ProdItems({item}) {
+function ProdItems({ image }) {
   return (
     <Container>
-      <Image src={item.img}/>
+      <Image src={`${path.join(process.env.PUBLIC_URL, image)}`}/>
       <Info>
         <Icon> 
           <ShoppingCartOutlined/>
@@ -72,4 +73,4 @@ function ProdItems({item}) {
   )
 }
 
-export default ProdItems
+export default ProdItems;

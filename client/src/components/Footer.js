@@ -1,7 +1,6 @@
 import { Instagram, MailOutline, Phone, Pinterest, Room, Twitter } from '@material-ui/icons';
 import React from 'react'
 import styled from 'styled-components'
-import payment from '../images/payment.png'
 import { mobile } from "../responsive";
 
 const Container = styled.div`
@@ -62,9 +61,9 @@ const ContactItem = styled.div`
   align-items: center;
 `;
 
-const Payment = styled.img`
-  width: 50%;
-`
+// const Payment = styled.img`
+//   width: 50%;
+// `
 function Footer() {
   return (
     <Container>
@@ -104,7 +103,10 @@ function Footer() {
         <ContactItem> <Room style={{marginRight: "10px"}} /> 8600 Los Angeles, CA </ContactItem>
         <ContactItem> <Phone style={{marginRight: "10px"}} /> 123-069-0420 </ContactItem>
         <ContactItem> <MailOutline style={{marginRight: "10px"}} /> contactus@apparelgbt.mail </ContactItem>
-        <Payment src={payment} />
+        <img
+            src="../images/payment.png"
+            alt="payment methods"
+          />
       </Right>
     </Container>
   )

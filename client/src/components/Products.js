@@ -1,10 +1,10 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import ProdItems from './ProdItems';
-import { useStoreContext } from '../utils/GlobalState';
-import { idbPromise } from '../utils/helpers';
-import { useQuery } from '@apollo/client'
-import { UPDATE_PRODUCTS } from '../utils/actions';
+// import { useStoreContext } from '../utils/GlobalState';
+// import { idbPromise } from '../utils/helpers';
+import { useQuery } from '@apollo/client';
+// import { UPDATE_PRODUCTS } from '../utils/actions';
 import { QUERY_PRODUCTS } from '../utils/queries';
 
 const Container = styled.div`
@@ -25,45 +25,20 @@ const Title = styled.div`
 
 function Products() {
   const { loading, data } = useQuery(QUERY_PRODUCTS);
-  const [state, dispatch] = useStoreContext();
-  const { currentCategory } = state;
+  const products = data?.products || [];
 
-  useEffect(() => {
-    if (data) {
-      dispatch({
-        type: UPDATE_PRODUCTS,
-        products: data.products
-      });
-      data.products.forEach((product) => {
-        idbPromise('products', 'put', product)
-      });
-    } else if (!loading) {
-      idbPromise('products', 'get').then((products) => {
-        dispatch({
-          type: UPDATE_PRODUCTS,
-          products: products
-        });
-      });
-    }
-  }, [data, loading, dispatch]);
+  if (loading) return <h1>Loading...</h1>;
 
-  function filterProducts() {
-    if (!currentCategory) {
-      return state.products
-    }
-
-    return state.products.filter((product) => 
-    product.category._id === currentCategory);
-  }
+  console.log('PRODUCTS', products);
 
   return (
     <> 
       <Title> SHOP OUR FAVORITES </Title>
     <Container >
-    {filterProducts.map((product) => (
+    {products.map((product) => (
         <ProdItems 
         key={product._id}
-        _id={product._id}
+        id={product._id}
         image={product.image}
         name={product.name}
         price={product.price}
