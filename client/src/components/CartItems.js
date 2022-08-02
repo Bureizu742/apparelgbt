@@ -2,6 +2,8 @@ import React from 'react';
 import { useStoreContext } from "../utils/GlobalState";
 import { REMOVE_FROM_CART, UPDATE_CART_QUANTITY } from "../utils/actions";
 import { idbPromise } from "../utils/helpers";
+import { DeleteOutline } from '@material-ui/icons';
+
 
 const CartItem = ({ item }) => {
 
@@ -59,7 +61,7 @@ const CartItem = ({ item }) => {
             aria-label="trash"
             onClick={() => removeFromCart(item)}
           >
-            🗑️
+            <DeleteOutline/>
           </span>
         </div>
       </div>
