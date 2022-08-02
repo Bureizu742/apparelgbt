@@ -7,12 +7,13 @@ import Products from '../components/Products';
 import Newsleter from '../components/Newsletter';
 import Footer from '../components/Footer';
 import Social from '../components/Social';
-
+import Mission from '../components/Mission';
 function Home() {
   return (
     <div>
     <Broadcast />
     <Navbar />
+    <Mission />
     <Carousel />
     <hr />
     <Categories />
