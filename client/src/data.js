@@ -1,18 +1,18 @@
-import imgOne from './images/womens/formedright1.jpeg';
-import imgTwo from './images/mens/mset2.jpeg';
-import imgThree from './images/mixed/denim.jpeg';
-import jeans from './images/womens/wdenim6.jpeg'
-import tops from './images/womens/lounge4.jpeg'
-import sets from './images/mixed/miset1.jpeg'
-import set1 from './images/womens/set1.jpeg'
-import mset1 from './images/mens/mset1.jpeg'
-import miset2 from './images/mixed/miset2.jpeg'
-import top5 from './images/mens/top5.jpeg'
-import top4 from './images/womens/top4.jpeg'
-import top3 from './images/mens/top3.jpeg'
-import jeans2 from './images/womens/jeans2.jpeg'
-import wsocial from './images/womens/wsocial.jpeg'
-import jeans1 from './images/womens/jeans1.jpeg'
+import imgOne from './assets/misc/minflags.jpeg';
+import imgTwo from './assets/sets/loungepaired.webp';
+import imgThree from './assets/misc/flag.webp';
+import jeans from './assets/bottoms/jeanspair1.jpeg'
+import tops from './assets/tops/hoodiespaired.jpeg'
+import sets from './assets/sets/flagsuit.jpeg'
+import set1 from './assets/sets/linenset.jpeg'
+import mset1 from './assets/sets/loungepaired2.webp'
+import miset2 from './assets/sets/suits.jpeg'
+import top5 from './assets/tops/linentops.jpeg'
+import top4 from './assets/tops/lovetree.jpeg'
+import top3 from './assets/tops/noshirtpaired.jpeg'
+import jeans2 from './assets/misc/stickers.webp'
+import wsocial from './assets/misc/nonbracelet.webp'
+import jeans1 from './assets/misc/plusflags.jpeg'
 
 export const carouselItems = [
   {
