@@ -2,6 +2,7 @@ import { Badge } from '@material-ui/core';
 import { Search, ShoppingCartOutlined } from '@material-ui/icons';
 import React from 'react';
 import styled from 'styled-components';
+import Auth from "../utils/auth";
 import { mobile } from '../responsive'
 import { Link } from "react-router-dom";
 
@@ -81,6 +82,22 @@ const LinkItem = styled.div`
 `
 
 function Navbar() {
+  function loggedInNav() {
+    if (Auth.loggedIn()) {
+      return (
+        <StyledLink to="/orderHistory">
+        Order History
+      </StyledLink> 
+      )
+  } else {
+    return (
+      <> 
+      <StyledLink to="/signup"> CREATE ACCOUNT </StyledLink>
+      <StyledLink to="/login"> LOGIN</StyledLink>
+      </>
+    )
+  }
+}
   return (
     <Container>
       <Wrapper>
@@ -96,14 +113,15 @@ function Navbar() {
             </Logo> 
             </Center>
         <Right>
-          <StyledLink to="/signup"> CREATE ACCOUNT </StyledLink>
-          <StyledLink to="/login"> LOGIN</StyledLink>
           <LinkItem> 
           <Badge badgeContent={4} color="secondary">
           <ShoppingCartOutlined />
           </Badge>
           </LinkItem>
         </Right>
+        <nav>
+        {loggedInNav()}
+      </nav>
       </Wrapper>
     </Container>
   )
