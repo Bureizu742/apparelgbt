@@ -64,10 +64,11 @@ const Icon = styled.div`
 `;
 
 
-function ProdItems(item, { image }) {
+function ProdItems(item) {
   const [state, dispatch] = useStoreContext();
 
   const {
+    image,
     name,
     _id,
     price,
@@ -99,17 +100,13 @@ function ProdItems(item, { image }) {
   return (
     <Container>
       <Link to={`/products/${_id}`} >
-        <p>{name}</p>
       </Link>
-      <Image src={`${path.join(process.env.PUBLIC_URL, image)}`} />
+      <Image src={`${path.join(process.env.PUBLIC_URL, `${image}`)}`} />
       <Info>
         <Icon>
-          <ShoppingCartOutlined />
+          <ShoppingCartOutlined onClick={addToCart} />
         </Icon>
       </Info>
-      <div>{quantity} in stock</div>
-      <div>${price}</div>
-      <button onClick={addToCart}>Add to cart</button>
     </Container>
   )
 }
