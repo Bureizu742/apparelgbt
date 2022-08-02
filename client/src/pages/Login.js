@@ -1,85 +1,75 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { useMutation } from '@apollo/client';
-import { LOGIN_USER } from '../utils/mutations';
+import React from 'react'
+import styled from 'styled-components'
+import bg from '../images/jeansbg.jpeg'
+import {mobile} from "../responsive";
 
-import Auth from '../utils/auth';
+const Container = styled.div `
+  width: 100vw;
+  height: 100vh;
+  background: url(${bg});
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-color: #f3f5f4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
 
-const Login = () => {
-  const [formState, setFormState] = useState({ email: '', password: '' });
-  const [login, { error, data }] = useMutation(LOGIN_USER);
+const Wrapper = styled.div `
+  width: 25%;
+  padding: 20px;
+  background-color: #cfcfc4;
+  ${mobile({ width: "75%" })}
+`;
 
-  // update state based on form input changes
-  const handleChange = (event) => {
-    const { name, value } = event.target;
+const Form = styled.form `
+  display: flex;
+  flex-direction: column;
+`;
 
-    setFormState({
-      ...formState,
-      [name]: value,
-    });
-  };
+const Title = styled.h1 `
+  font-size: 24px;
+  font-weight: bold;
+`;
 
-  // submit form
-  const handleFormSubmit = async (event) => {
-    event.preventDefault();
-    try {
-      const { data } = await login({
-        variables: { ...formState },
-      });
+const Input = styled.input `
+  flex: 1;
+  min-width: 40%;
+  margin: 10px 0px;
+  padding: 10px
+`;
 
-      Auth.login(data.login.token);
-    } catch (e) {
-      console.error(e);
-    }
+const Button = styled.button `
+  width: 40%;
+  border: none;
+  padding: 15px 20px;
+  background-color: white;
+  cursor: pointer;
+  margin-bottom: 10px
+`;
 
-    // clear form values
-    setFormState({
-      email: '',
-      password: '',
-    });
-  };
+const Link = styled.a`
+  margin: 5px 0px;
+  text-decoration: underline;
+  cursor: pointer;
+  font-size: 14px;
+`;
 
-  const renderForm = () => {
-    if (data) {
-      return (
-        <p>
-          Success! You may now head{' '}
-          <Link to="/">back to the homepage.</Link>
-        </p>
-      )
-    } 
-    return (
-      <form onSubmit={handleFormSubmit}>
-        <input
-          placeholder="Your email"
-          name="email"
-          type="email"
-          value={formState.email}
-          onChange={handleChange}
-        />
-        <input
-          placeholder="******"
-          name="password"
-          type="password"
-          value={formState.password}
-          onChange={handleChange}
-        />
-        <button type="submit">
-          Submit
-        </button>
-      </form>
-    );
-  };
-
+function Login() {
   return (
-    <main>
-      <h4>Login</h4>
-      <div>
-        {renderForm()}
-        {error && <div>{error.message}</div>}
-      </div>
-    </main>
-  );
-};
+    <Container>
+      <Wrapper>
+        <Title> WE'VE MISSED YOU. </Title>
+        <Form>
+          <Input placeholder="username"/>
+          <Input placeholder="password"/>
+          <Button> LOGIN</Button>
+          <Link> FORGOT PASSWORD? </Link>
+          <Link> CREATE A NEW ACCOUNT</Link>
+          </Form> 
+      </Wrapper>
+    </Container>
+  )
+}
 
-export default Login;
+export default Login
