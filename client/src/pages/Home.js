@@ -23,7 +23,6 @@ function Home() {
     <Newsleter />
     <Footer />
     </div>
-    
   )
 }
 

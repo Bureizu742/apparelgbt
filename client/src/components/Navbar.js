@@ -1,11 +1,10 @@
-import { Badge } from '@material-ui/core';
-import { Search, ShoppingCartOutlined } from '@material-ui/icons';
+import { Search} from '@material-ui/icons';
 import React from 'react';
 import styled from 'styled-components';
 import Auth from "../utils/auth";
 import { mobile } from '../responsive'
 import { Link } from "react-router-dom";
-
+import Cart from '../components/Cart'
 const Container = styled.div`
  height: 60px;
  margin-bottom: 20px;
@@ -116,13 +115,9 @@ function Navbar() {
             </Logo> 
             </Center>
         <Right>
-          <Link to="/cart">
           <LinkItem> 
-          <Badge badgeContent={4} color="secondary">
-          <ShoppingCartOutlined />
-          </Badge>
+          <Cart />
           </LinkItem>
-          </Link>
         </Right>
         <nav>
         {loggedInNav()}
