@@ -1,12 +1,10 @@
 import React from 'react'
 import styled from 'styled-components'
-import bg from '../images/jeansbg.jpeg'
 import { mobile } from "../responsive";
 
 const Container = styled.div `
   width: 100vw;
   height: 100vh;
-  background: url(${bg});
   background-repeat: no-repeat;
   background-size: contain;
   background-color: #f3f5f4;

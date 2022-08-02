@@ -7,7 +7,7 @@ db.once('open', async () => {
   const categories = await Category.insertMany([
     { name: 'Tops' },
     { name: 'Bottoms' },
-    { name: 'Skirts/Dresses' },
+    { name: 'Sets' },
     { name: 'Accessories' },
     { name: 'Misc' }
   ]);
@@ -20,7 +20,7 @@ db.once('open', async () => {
     {
       name: 'Item Name 1',
       description: 'This is a default description',
-      image: 'TODO',
+      image: 'assets/misc/minflags.jpeg',
       price: 24.50,
       quantity: 5,
       category: categories[0]._id
@@ -28,7 +28,7 @@ db.once('open', async () => {
     {
       name: 'Item Name 2',
       description: 'This is a default description',
-      image: 'TODO',
+      image: 'assets/sets/loungepaired.jpeg',
       price: 24.51,
       quantity: 5,
       category: categories[0]._id
@@ -36,7 +36,7 @@ db.once('open', async () => {
     {
       name: 'Item Name 3',
       description: 'This is a default description',
-      image: 'TODO',
+      image: 'assets/misc/flag.jpeg',
       price: 24.52,
       quantity: 5,
       category: categories[0]._id
@@ -44,7 +44,7 @@ db.once('open', async () => {
     {
       name: 'Item Name 4',
       description: 'This is a default description',
-      image: 'TODO',
+      image: 'assets/bottoms/jeanspair1.jpeg',
       price: 24.53,
       quantity: 5,
       category: categories[0]._id
@@ -52,7 +52,7 @@ db.once('open', async () => {
     {
       name: 'Item Name 5',
       description: 'This is a default description',
-      image: 'TODO',
+      image: 'assets/tops/hoodiespaired.jpeg',
       price: 24.54,
       quantity: 5,
       category: categories[0]._id
@@ -66,13 +66,12 @@ db.once('open', async () => {
   await User.create({
       username: 'LiliVanilli',
       email: 'lillian123@email.com',
-      password: 'passcode1234'
-  });
-
-  await User.create({
-      username: 'Jalanicus',
-      email: 'unterjal@email.com',
-      password: 'password123'
+      password: 'passcode1234',
+      orders: [
+        {
+          products: [products[0]._id, products[0]._id, products[1]._id]
+        }
+      ]
   });
 
   await User.create({
@@ -87,12 +86,6 @@ await User.create({
     password: 'passwerd123'
 });
 
-await User.create({
-    username: 'generictestuser69',
-    email: 'thisisatest@email.com',
-    password: 'passstring123'
-});
-  
   console.log('Users Seeded!');
 
   process.exit();
