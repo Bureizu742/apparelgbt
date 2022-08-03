@@ -12,6 +12,7 @@ import Home from './pages/Home'
 import Signup from './pages/Signup'
 import Login from './pages/Login'
 import Detail from './pages/Detail';
+import OrderHistory from './pages/OrderHistory';
 import Products from './components/Products';
 
 const httpLink = createHttpLink({
@@ -59,6 +60,10 @@ function App() {
           path="/products/:id" 
           element={<Detail />} 
           />
+          <Route
+        path="/orderHistory"
+        element={<OrderHistory />}
+        />
         <Route
         path="*" 
         element={<badPage />} 
