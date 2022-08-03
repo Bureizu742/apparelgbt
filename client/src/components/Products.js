@@ -1,12 +1,14 @@
 import React, {useEffect} from 'react';
 import styled from 'styled-components';
-import ProdItems from './ProdItems';
+import ProductItem from './ProductItem';
 import { useStoreContext } from '../utils/GlobalState';
 import { idbPromise } from '../utils/helpers';
 import { useQuery } from '@apollo/client';
 import { UPDATE_PRODUCTS } from '../utils/actions';
 import { QUERY_PRODUCTS } from '../utils/queries';
-
+import Navbar from './Navbar';
+import Newsletter from './Newsletter';
+import Footer from './Footer';
 const Container = styled.div`
   padding: 20px;
   display: flex;
@@ -60,12 +62,14 @@ function Products() {
   }
 
   return (
+    <> 
+    <Navbar />
     <div> 
       <Title> SHOP OUR FAVORITES </Title>
       {state.products.length ? (
     <Container >
     {filterProducts().map((product) => (
-        <ProdItems 
+        <ProductItem 
         key={product._id}
         id={product._id}
         image={product.image}
@@ -80,6 +84,9 @@ function Products() {
       )}
       {loading ? <h2> LOADING ...</h2> : null}
     </div>
+    <Newsletter />
+    <Footer />
+    </>
   )
  };
 

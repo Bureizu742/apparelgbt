@@ -5,8 +5,6 @@ import { UPDATE_CATEGORIES, UPDATE_CURRENT_CATEGORY } from '../utils/actions';
 import { QUERY_CATEGORIES } from '../utils/queries';
 import { idbPromise } from '../utils/helpers';
 import styled from 'styled-components';
-// import { categories } from '../data';
-// import CatItems from './CatItems';
 import { mobile } from "../responsive";
 
 const Container = styled.div`

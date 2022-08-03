@@ -5,8 +5,6 @@ import Carousel from '../components/Carousel';
 import Newsleter from '../components/Newsletter';
 import Footer from '../components/Footer';
 import Mission from '../components/Mission';
-import CatItems from '../components/CatItems';
-import { categories } from '../data';
 import { mobile } from "../responsive";
 import styled from 'styled-components';
 
@@ -26,9 +24,6 @@ function Home() {
     <Carousel />
     <hr />
     <Container>
-    {categories.map((item) => (
-        <CatItems item={item} key={item.id}/>
-      ))}
       </Container>
     <hr />
     <Newsleter />
