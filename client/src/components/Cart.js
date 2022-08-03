@@ -7,7 +7,61 @@ import CartItem from './CartItems';
 import Auth from '../utils/auth';
 import { useStoreContext } from '../utils/GlobalState';
 import { TOGGLE_CART, ADD_MULTIPLE_TO_CART } from '../utils/actions';
-import { ShoppingCartOutlined } from '@material-ui/icons';
+import { DeleteOutline, ShoppingCartOutlined } from '@material-ui/icons';
+import styled from 'styled-components';
+
+const CartToggler = styled.div`
+  position: fixed;
+  top: 0;
+  right: 0;
+  background-color: white;
+  overflow: auto;
+  padding: 10px;
+  box-shadow: 0 0 1rem rgba(0, 0, 0, .5);
+  border-bottom-left-radius: 10px;
+  z-index: 2;
+`
+
+const CloseCart = styled.div`
+position: absolute;
+  top: .5rem;
+  right: .5rem;
+  cursor: pointer;
+
+  &&:hover {
+    text-decoration: underline;
+  }
+`
+
+const Info = styled.div`
+  width: 50px;
+  padding: 0;
+  margin: 0px 20px 20px 0px;
+`
+
+const ClosedCart = styled.div`
+  position: fixed;
+  top: 2%;
+  right: 1%;
+  font-size: 20px;
+  cursor: pointer;
+  border-radius: 50%;
+  padding: 10px;
+  width: 50px;
+  height: 50px;
+  
+  &&:hover {
+    transform: rotate(8deg);
+  }
+  `
+  const Button = styled.div`
+  padding: 10px;
+  font-size: 20pz;
+  background-color: transparent;
+  cursor: pointer;
+  border-radius: 10px;
+  `
+
 const stripePromise = loadStripe('pk_test_TYooMQauvdEDq54NiTphI7jx');
 
 const Cart = () => {
@@ -61,20 +115,22 @@ const Cart = () => {
 
   if (!state.cartOpen) {
     return (
-      <div className="cart-closed" onClick={toggleCart}>
+      <> 
+      <ClosedCart onClick={toggleCart}>
        <ShoppingCartOutlined/>
-      </div>
+      </ClosedCart>
+      </>
     );
   }
 
   return (
-    <div className="cart">
-      <div className="close" onClick={toggleCart}>
-        [close]
-      </div>
+    <CartToggler>
+      <CloseCart onClick={toggleCart}>
+        <DeleteOutline/>
+      </CloseCart>
       <h2>Shopping Cart</h2>
       {state.cart.length ? (
-        <div>
+        <Info>
           {state.cart.map((item) => (
             <CartItem key={item._id} item={item} />
           ))}
@@ -83,18 +139,18 @@ const Cart = () => {
             <strong>Total: ${calculateTotal()}</strong>
 
             {Auth.loggedIn() ? (
-              <button onClick={submitCheckout}>Checkout</button>
+              <Button onClick={submitCheckout}>Checkout</Button>
             ) : (
               <span>(log in to check out)</span>
             )}
           </div>
-        </div>
+        </Info>
       ) : (
         <h3>
-          You haven't added anything to your cart yet!
+          nothing in your cart yet!
         </h3>
       )}
-    </div>
+    </CartToggler>
   );
 };
 
