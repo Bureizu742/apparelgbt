@@ -87,9 +87,12 @@ function Navbar() {
   function loggedInNav() {
     if (Auth.loggedIn()) {
       return (
+        <>
         <StyledLink to="/orderHistory">
         Order History
       </StyledLink> 
+      <StyledLink to="/"> LOGOUT</StyledLink>
+        </>
       )
   } else {
     return (
