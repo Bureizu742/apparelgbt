@@ -9,20 +9,13 @@ import { QUERY_PRODUCTS } from '../utils/queries';
 import Navbar from './Navbar';
 import Newsletter from './Newsletter';
 import Footer from './Footer';
+import {ShoppingCartOutlined } from '@material-ui/icons';
+
 const Container = styled.div`
   padding: 20px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-`;
-const Title = styled.div`
-  font-size: 50px;
-  font-style: italic;
-  font-weight: bold;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding-top: 40px;
 `;
 
 function Products() {
@@ -65,7 +58,6 @@ function Products() {
     <> 
     <Navbar />
     <div> 
-      <Title> SHOP OUR FAVORITES </Title>
       {state.products.length ? (
     <Container >
     {filterProducts().map((product) => (
@@ -78,6 +70,7 @@ function Products() {
         quantity={product.quantity}
         />
       ))}
+          <ShoppingCartOutlined/>
     </Container>
       ) : (
         <h3>You haven't added any products yet!</h3>
