@@ -88,7 +88,7 @@ font-size: 14px;
     color: black;
   }
   ${mobile({ fontSize: "12px", marginLeft: "10px" })}
-`
+`;
 
 function Carousel() {
   const [carouselIndex, setCarouselIndex] = useState(0);

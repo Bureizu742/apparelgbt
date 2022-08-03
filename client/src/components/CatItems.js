@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components';
 import { mobile } from "../responsive";
 import { tablet } from "../responsive";
+import { Link } from 'react-router-dom';
 
 const Container = styled.div`
   flex: 1;
@@ -41,13 +42,28 @@ const Button = styled.button`
   cursor: pointer;
   font-weight: bold;
 `;
+
+const StyledLink = styled(Link)  `
+font-size: 14px;
+  cursor: pointer;
+  font-weight: bold;
+  color: black;
+  text-decoration: none;
+  &:hover {
+    color: black;
+  }
+  ${mobile({ fontSize: "12px", marginLeft: "10px" })}
+`;
+
 function CatItems ({item}) {
   return (
     <Container>
       <Image src={item.img}/>
       <Info>
         <Title>{item.title}</Title>
-        <Button> SHOP NOW </Button>
+        <Button> 
+              <StyledLink to= "/products"> SHOP NOW 
+              </StyledLink></Button>
         </Info> 
     </Container>
   )
