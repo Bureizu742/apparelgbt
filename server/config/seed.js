@@ -23,7 +23,7 @@ db.once('open', async () => {
       image: 'assets/misc/minflags.jpeg',
       price: 24.50,
       quantity: 5,
-      category: categories[3]._id
+      category: categories[0]._id
     },
     {
       name: 'Item Name 2',
@@ -31,7 +31,7 @@ db.once('open', async () => {
       image: 'assets/sets/loungepaired.jpeg',
       price: 24.51,
       quantity: 5,
-      category: categories[2]._id
+      category: categories[1]._id
     },
     {
       name: 'Item Name 3',
@@ -39,7 +39,7 @@ db.once('open', async () => {
       image: 'assets/misc/flag.jpeg',
       price: 24.52,
       quantity: 5,
-      category: categories[3]._id
+      category: categories[2]._id
     },
     {
       name: 'Item Name 4',
@@ -47,7 +47,7 @@ db.once('open', async () => {
       image: 'assets/bottoms/jeanspair1.jpeg',
       price: 24.53,
       quantity: 5,
-      category: categories[1]._id
+      category: categories[3]._id
     },
     {
       name: 'Item Name 5',
@@ -55,7 +55,7 @@ db.once('open', async () => {
       image: 'assets/tops/hoodiespaired.jpeg',
       price: 24.54,
       quantity: 5,
-      category: categories[0]._id
+      category: categories[4]._id
     },
   ]);
 
@@ -64,7 +64,7 @@ db.once('open', async () => {
   await User.deleteMany();
 
   await User.create({
-      username: 'LiliVanilli',
+      username: 'LiliFoReally',
       email: 'lillian123@email.com',
       password: 'passcode1234',
       orders: [
