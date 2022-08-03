@@ -64,6 +64,10 @@ function App() {
         path="/cart"
         element={<Cart />}
         />
+        <Route
+        path="*" 
+        element={<badPage />} 
+        />
       </Routes>
       </StoreProvider>
     </Router>
