@@ -76,6 +76,14 @@ font-size: 14px;
   }
   ${mobile({ fontSize: "12px", marginLeft: "10px" })}
 `
+const NavLink = styled(Link)  `
+  font-weight: bold;
+  font-style: italic;
+  font-size: 50px;
+  text-decoration: none;
+  color: black;
+  ${mobile({ fontSize: "24px" })}
+`
 const LinkItem = styled.div`
   font-size: 14px;
   cursor: pointer;
@@ -90,12 +98,9 @@ function Navbar() {
       return (
         <>
         <StyledLink to="/orderHistory">
-        Order History
+        ORDER HISTORY
       </StyledLink> 
-     <li className='mx-1'>
-
-      <a href='/' onClick={() => auth.logout()}> LOGOUT</a>
-     </li>
+      <StyledLink to="/" onClick={() => auth.logout()}> LOGOUT</StyledLink>
         </>
       )
   } else {
@@ -118,8 +123,7 @@ function Navbar() {
           </SearchContainer>
         </Left>
         <Center> 
-          <Logo> appareLGBT.
-            </Logo> 
+          <NavLink to="/"> appareLGBT. </NavLink> 
             </Center>
         <Right>
           <LinkItem> 

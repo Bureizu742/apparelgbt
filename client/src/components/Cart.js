@@ -40,9 +40,6 @@ const Info = styled.div`
 `
 
 const ClosedCart = styled.div`
-  position: fixed;
-  top: 2%;
-  right: 1%;
   font-size: 20px;
   cursor: pointer;
   border-radius: 50%;

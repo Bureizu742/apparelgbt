@@ -13,11 +13,3 @@ body {
 hr {
   width: 40%;
 }
-.mx-1{
-  margin-right: calc(1rem * 0.5);
-  margin-left: calc(1rem * 0.5);
-  list-style-type: none;
-  font-weight: bold ;
-  text-decoration: none;
- color: black;
-}
