@@ -13,19 +13,26 @@ import { QUERY_PRODUCTS } from '../utils/queries';
 import { idbPromise } from '../utils/helpers';
 import {ShoppingCartOutlined, DeleteOutline } from '@material-ui/icons';
 import styled from 'styled-components';
+import Navbar from '../components/Navbar';
+import Broadcast from '../components/Broadcast';
+
+const Wrapper = styled.div`
+  padding: 50px;
+  display: flex;
+`;
 
 const Container = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
   `
 const Info = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  cursor: pointer;
-  margin-top: 50px;
-  margin-left: 20px;
+  flex: 1;
+  margin-left: 500px;
+  margin-top: 40px;
+  `
+const ImageContainer = styled.div`
+  margin-top: 20px;
+  flex: 1;
+  /* max-width: 50%;
+  max-height: 50%; */
   `
 
 function Detail() {
@@ -94,9 +101,12 @@ function Detail() {
 
   return (
     <>
+    <Navbar/>
+    <Broadcast />
       {currentProduct && cart ? (
         <Container>
           <Link to="/products">← Back to Products</Link>
+          <Wrapper> 
           <Info> 
           <h2>{currentProduct.name}</h2>
           <p>{currentProduct.description}</p>
@@ -109,15 +119,18 @@ function Detail() {
             </DeleteOutline>
           </p>
         </Info>
+        <ImageContainer> 
           <img
-            src={`/assets/${currentProduct.image}`}
+            src={`/${currentProduct.image}`}
             alt={currentProduct.name}
           />
+          </ImageContainer> 
+          </Wrapper>
         </Container>
       ) : null}
       {loading ? <h2> LOADING...</h2> : null}
       <Cart />
-    </>
+          </>
   );
 }
 

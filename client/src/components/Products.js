@@ -9,13 +9,11 @@ import { QUERY_PRODUCTS } from '../utils/queries';
 import Navbar from './Navbar';
 import Newsletter from './Newsletter';
 import Footer from './Footer';
-import {ShoppingCartOutlined } from '@material-ui/icons';
 
 const Container = styled.div`
   padding: 20px;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-evenly;
 `;
 
 function Products() {
@@ -57,11 +55,11 @@ function Products() {
   return (
     <> 
     <Navbar />
-    <div> 
       {state.products.length ? (
     <Container >
     {filterProducts().map((product) => (
         <ProductItem 
+        className="product-container"
         key={product._id}
         id={product._id}
         image={product.image}
@@ -70,13 +68,11 @@ function Products() {
         quantity={product.quantity}
         />
       ))}
-          <ShoppingCartOutlined/>
-    </Container>
+      </Container>
       ) : (
         <h3>You haven't added any products yet!</h3>
       )}
       {loading ? <h2> LOADING ...</h2> : null}
-    </div>
     <Newsletter />
     <Footer />
     </>

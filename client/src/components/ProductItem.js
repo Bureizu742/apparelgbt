@@ -1,12 +1,11 @@
 import React from 'react';
 import { useStoreContext } from '../utils/GlobalState';
-import { ADD_TO_CART, UPDATE_CART_QUANTITY, } from '../utils/actions';
+import { ADD_TO_CART, UPDATE_CART_QUANTITY } from '../utils/actions';
 import { idbPromise } from '../utils/helpers';
 import { Link } from "react-router-dom";
 import { pluralize } from "../utils/helpers"
 import path from 'path';
 // import { ShoppingCartOutlined } from '@material-ui/icons';
-
 import styled from 'styled-components';
 
 
@@ -75,26 +74,6 @@ const Prod = styled.div`
 
 function ProductItems(item) {
   const [state, dispatch] = useStoreContext();
-  // const { loading, data } = useQuery(QUERY_SINGLE_PRODUCT);
-
-  // useEffect(() => {
-  //   if (data) {
-  //     dispatch({
-  //       type: UPDATE_PRODUCTS,
-  //       products: data.produc,
-  //     });
-  //     data.products.forEach((product) => {
-  //       idbPromise('products', 'put', product);
-  //     });
-  //   } else if (!loading) {
-  //     idbPromise('products', 'get').then((products) => {
-  //       dispatch({
-  //         type: UPDATE_PRODUCTS,
-  //         products: products,
-  //       });
-  //     });
-  //   }
-  // }, [data, loading, dispatch]);
 
   const {
     image,
@@ -104,7 +83,6 @@ function ProductItems(item) {
     quantity
   } = item;
   // console.log('ID', id)
-
   const { cart, products } = state;
 
   const addToCart = () => {
@@ -117,6 +95,7 @@ function ProductItems(item) {
         _id: id,
         purchaseQuantity: parseInt(itemInCart.purchaseQuantity) + 1
       });
+
       idbPromise('cart', 'put', {
         ...itemInCart,
         purchaseQuantity: parseInt(itemInCart.purchaseQuantity) + 1
@@ -137,7 +116,6 @@ function ProductItems(item) {
             alt={name}
             src={`${path.join(process.env.PUBLIC_URL, `${image}`)}`}
           />
-
         </Link>
         {/* {loading ? <h2> LOADING ...</h2> : null} */}
       </Container>
@@ -145,7 +123,6 @@ function ProductItems(item) {
         <p>{name}</p>
         <div>{quantity} {pluralize("item", quantity)} in stock</div>
         <span>${price}</span>
-        <button onClick={addToCart}>Add to Cart</button>
       </Prod>
     </>
   )

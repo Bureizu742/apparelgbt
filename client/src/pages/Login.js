@@ -1,6 +1,5 @@
 import { useMutation } from '@apollo/client';
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
 import { LOGIN_USER } from '../utils/mutations';
 import styled from 'styled-components'
 import { mobile } from "../responsive";
@@ -38,7 +37,7 @@ const Input = styled.input`
   flex: 1;
   min-width: 40%;
   margin: 10px 0px;
-  padding: 10px
+  padding: 10px;
 `;
 
 const Button = styled.button`
@@ -47,18 +46,12 @@ const Button = styled.button`
   padding: 15px 20px;
   background-color: white;
   cursor: pointer;
-  margin-bottom: 10px
+  margin-bottom: 10px;
 `;
 
-// const Link = styled.a`
-//   margin: 5px 0px;
-//   text-decoration: underline;
-//   cursor: pointer;
-//   font-size: 14px;
-// `;
 
-function Login(props) {
-  const [formState, setFormState] = useState({ username: '', password: '' });
+function Login () {
+  const [formState, setFormState] = useState({ username: '', password: ''});
   const [login, { error }] = useMutation(LOGIN_USER);
 
   const handleFormSubmit = async (event) => {
@@ -108,12 +101,12 @@ function Login(props) {
           </div>
         ) : null}
           <Button type='submit'> LOGIN</Button>
-          <Link> FORGOT PASSWORD? </Link>
-          <Link> CREATE A NEW ACCOUNT</Link>
+          <Button> FORGOT PASSWORD? </Button>
+          <Button> CREATE A NEW ACCOUNT</Button>
         </Form>
       </Wrapper>
     </Container>
   )
 }
 
-export default Login
+export default Login;
