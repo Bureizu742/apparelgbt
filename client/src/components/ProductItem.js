@@ -97,20 +97,20 @@ function ProductItems(item) {
   const {
     image,
     name,
-    _id,
+    id,
     price,
     quantity
   } = item;
-  console.log('ID', _id)
+  console.log('ID', id)
 
   const { cart } = state
 
   const addToCart = () => {
-    const itemInCart = cart.find((cartItem) => cartItem._id === _id)
+    const itemInCart = cart.find((cartItem) => cartItem._id === id)
     if (itemInCart) {
       dispatch({
         type: UPDATE_CART_QUANTITY,
-        _id: _id,
+        _id: id,
         purchaseQuantity: parseInt(itemInCart.purchaseQuantity) + 1
       });
       idbPromise('cart', 'put', {
@@ -128,7 +128,7 @@ function ProductItems(item) {
   return (
     <>
     <Container>
-    <Link to={`/products/${_id}`}>
+    <Link to={`/products/${id}`}>
         <Image
           alt={name}
           src={`${path.join(process.env.PUBLIC_URL, `${image}`)}`} 
