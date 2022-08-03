@@ -92,7 +92,10 @@ function Navbar() {
         <StyledLink to="/orderHistory">
         Order History
       </StyledLink> 
+     <li className='mx-1'>
+
       <a href='/' onClick={() => auth.logout()}> LOGOUT</a>
+     </li>
         </>
       )
   } else {
