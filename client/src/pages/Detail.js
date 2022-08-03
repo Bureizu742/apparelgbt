@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
-
 import Cart from '../components/Cart';
 import { useStoreContext } from '../utils/GlobalState';
 import {
@@ -12,6 +11,22 @@ import {
 } from '../utils/actions';
 import { QUERY_PRODUCTS } from '../utils/queries';
 import { idbPromise } from '../utils/helpers';
+import {ShoppingCartOutlined, DeleteOutline } from '@material-ui/icons';
+import styled from 'styled-components';
+
+const Container = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  `
+const Info = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  margin-top: 50px;
+  margin-left: 20px;
+  `
 
 function Detail() {
   const [state, dispatch] = useStoreContext();
@@ -80,29 +95,25 @@ function Detail() {
   return (
     <>
       {currentProduct && cart ? (
-        <div className="container my-1">
-          <Link to="/">← Back to Products</Link>
-
+        <Container>
+          <Link to="/products">← Back to Products</Link>
+          <Info> 
           <h2>{currentProduct.name}</h2>
-
           <p>{currentProduct.description}</p>
-
           <p>
             <strong>Price:</strong>${currentProduct.price}{' '}
-            <button onClick={addToCart}>Add to Cart</button>
-            <button
+            <ShoppingCartOutlined onClick={addToCart}></ShoppingCartOutlined>
+            <DeleteOutline
               disabled={!cart.find((p) => p._id === currentProduct._id)}
-              onClick={removeFromCart}
-            >
-              Remove from Cart
-            </button>
+              onClick={removeFromCart}>
+            </DeleteOutline>
           </p>
-
+        </Info>
           <img
             src={`/assets/${currentProduct.image}`}
             alt={currentProduct.name}
           />
-        </div>
+        </Container>
       ) : null}
       {loading ? <h2> LOADING...</h2> : null}
       <Cart />
