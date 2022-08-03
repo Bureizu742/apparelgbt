@@ -3,7 +3,6 @@ import { Link, useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 
 import Cart from '../components/Cart';
-
 import { useStoreContext } from '../utils/GlobalState';
 import {
   REMOVE_FROM_CART,
@@ -13,6 +12,7 @@ import {
 } from '../utils/actions';
 import { QUERY_PRODUCTS } from '../utils/queries';
 import { idbPromise } from '../utils/helpers';
+import spinner from '../assets/spinner.gif';
 
 function Detail() {
   const [state, dispatch] = useStoreContext();
@@ -25,9 +25,11 @@ function Detail() {
   const { products, cart } = state;
 
   useEffect(() => {
-        if (products.length) {
+    // already in global store
+    if (products.length) {
       setCurrentProduct(products.find((product) => product._id === id));
     }
+    // retrieved from server
     else if (data) {
       dispatch({
         type: UPDATE_PRODUCTS,
@@ -38,6 +40,7 @@ function Detail() {
         idbPromise('products', 'put', product);
       });
     }
+    // get cache from idb
     else if (!loading) {
       idbPromise('products', 'get').then((indexedProducts) => {
         dispatch({
@@ -100,12 +103,12 @@ function Detail() {
           </p>
 
           <img
-            src={`/assets/${currentProduct.image}`}
+            src={`/images/${currentProduct.image}`}
             alt={currentProduct.name}
           />
         </div>
       ) : null}
-      {loading ? <h2> LOADING...</h2> : null}
+      {loading ? <img src={spinner} alt="loading" /> : null}
       <Cart />
     </>
   );
