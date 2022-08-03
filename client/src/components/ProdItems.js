@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { useStoreContext } from '../utils/GlobalState';
 import { ADD_TO_CART, UPDATE_CART_QUANTITY } from '../utils/actions';
 import { idbPromise } from '../utils/helpers';
@@ -63,6 +62,11 @@ const Icon = styled.div`
   }
 `;
 
+const Prod = styled.div`
+  display: inline-block;
+  position: relative;
+`;
+
 
 function ProdItems(item) {
   const [state, dispatch] = useStoreContext();
@@ -98,9 +102,8 @@ function ProdItems(item) {
     }
   }
   return (
+    <>
     <Container>
-      <Link to={`/products/${_id}`} >
-      </Link>
       <Image src={`${path.join(process.env.PUBLIC_URL, `${image}`)}`} />
       <Info>
         <Icon>
@@ -108,6 +111,12 @@ function ProdItems(item) {
         </Icon>
       </Info>
     </Container>
+    <Prod>
+    <p>{name}</p>
+    <p>{quantity} in stock</p>
+    <p>${price}</p>
+    </Prod>
+    </>
   )
 }
 

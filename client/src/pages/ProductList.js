@@ -6,6 +6,7 @@ import Products from '../components/Products'
 import Newsletter from '../components/Newsletter'
 import Footer from '../components/Footer'
 import { mobile } from "../responsive";
+import Categories from '../components/Categories'
 
 const Container = styled.div``
 
@@ -40,6 +41,7 @@ function ProductList() {
       <Navbar />
       <Broadcast />
       <Title> Womens</Title>
+      <Categories />
       <FilterContainer>
         <Filter>
           <FilterText>Filter Products: </FilterText>
