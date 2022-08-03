@@ -52,7 +52,7 @@ db.once('open', async () => {
     {
       name: 'Item Name 5',
       description: 'This is a default description',
-      image: 'assets/tops/hoodiespaired.jpeg',
+      // image: 'assets/tops/hoodiespaired.jpeg',
       price: 24.54,
       quantity: 5,
       category: categories[4]._id

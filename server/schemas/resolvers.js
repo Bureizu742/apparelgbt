@@ -32,13 +32,11 @@ const resolvers = {
           $regex: name
         };
       }
-
-      const products = await Product.find(params);
-
-      return products;
-    },
-    product: async () => {
       return await Product.find(params).populate('category');
+    },
+    
+    product: async (parent, {_id}) => {
+      return await Product.findById(_id).populate('category');
     },
     order: async (parent, { _id }, context) => {
       if (context.user) {

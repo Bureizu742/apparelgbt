@@ -12,7 +12,6 @@ import {
 } from '../utils/actions';
 import { QUERY_PRODUCTS } from '../utils/queries';
 import { idbPromise } from '../utils/helpers';
-import spinner from '../../public/assets/loading/colorful-loading.gif';
 
 function Detail() {
   const [state, dispatch] = useStoreContext();
@@ -25,8 +24,9 @@ function Detail() {
   const { products, cart } = state;
 
   useEffect(() => {
-    if (products.length) setCurrentProduct(products.find((product) => product._id === id));
-
+        if (products.length) {
+      setCurrentProduct(products.find((product) => product._id === id));
+    }
     else if (data) {
       dispatch({
         type: UPDATE_PRODUCTS,
@@ -37,7 +37,6 @@ function Detail() {
         idbPromise('products', 'put', product);
       });
     }
-
     else if (!loading) {
       idbPromise('products', 'get').then((indexedProducts) => {
         dispatch({
@@ -100,12 +99,12 @@ function Detail() {
           </p>
 
           <img
-            src={`/images/${currentProduct.image}`}
+            src={`/assets/${currentProduct.image}`}
             alt={currentProduct.name}
           />
         </div>
       ) : null}
-      {loading ? <img src={spinner} alt="loading" /> : null}
+      {loading ? <h2> LOADING...</h2> : null}
       <Cart />
     </>
   );

@@ -9,11 +9,10 @@ import { setContext } from '@apollo/client/link/context';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { StoreProvider } from './utils/GlobalState'
 import Home from './pages/Home'
-import ProductList from './pages/ProductList';
-import Product from './pages/Product'
 import Signup from './pages/Signup'
 import Login from './pages/Login'
-import Cart from './components/Cart'
+import Detail from './pages/Detail';
+import Products from './components/Products';
 
 const httpLink = createHttpLink({
   uri: '/graphql',
@@ -45,14 +44,6 @@ function App() {
         element={<Home />}
         />
         <Route
-        path="/products"
-        element={<ProductList />}
-        />
-        <Route
-        path="/product/:id"
-        element={<Product />}
-        />
-        <Route
         path="/signup"
         element={<Signup />}
         />
@@ -60,10 +51,14 @@ function App() {
         path="/login"
         element={<Login />}
         />
-        <Route
-        path="/cart"
-        element={<Cart />}
-        />
+        <Route 
+          path="/products" 
+          element={<Products />} 
+          />
+        <Route 
+          path="/products/:id" 
+          element={<Detail />} 
+          />
         <Route
         path="*" 
         element={<badPage />} 

@@ -1,13 +1,14 @@
-import React from 'react';
+import react from 'react';
 import { useStoreContext } from '../utils/GlobalState';
-import { ADD_TO_CART, UPDATE_CART_QUANTITY } from '../utils/actions';
+import { ADD_TO_CART, UPDATE_CART_QUANTITY,  } from '../utils/actions';
 import { idbPromise } from '../utils/helpers';
-import { ShoppingCartOutlined } from '@material-ui/icons';
 import { Link } from "react-router-dom";
 import { pluralize } from "../utils/helpers"
 import path from 'path';
+// import { ShoppingCartOutlined } from '@material-ui/icons';
 
 import styled from 'styled-components';
+
 
 const Info = styled.div`
   opacity: 0;
@@ -70,8 +71,29 @@ const Prod = styled.div`
 `;
 
 
-function ProdItems(item) {
+function ProductItems(item) {
   const [state, dispatch] = useStoreContext();
+  // const { loading, data } = useQuery(QUERY_SINGLE_PRODUCT);
+
+  // useEffect(() => {
+  //   if (data) {
+  //     dispatch({
+  //       type: UPDATE_PRODUCTS,
+  //       products: data.produc,
+  //     });
+  //     data.products.forEach((product) => {
+  //       idbPromise('products', 'put', product);
+  //     });
+  //   } else if (!loading) {
+  //     idbPromise('products', 'get').then((products) => {
+  //       dispatch({
+  //         type: UPDATE_PRODUCTS,
+  //         products: products,
+  //       });
+  //     });
+  //   }
+  // }, [data, loading, dispatch]);
+
   const {
     image,
     name,
@@ -118,9 +140,10 @@ function ProdItems(item) {
         <span>${price}</span>
       </div>
       <button onClick={addToCart}>Add to cart</button>
+      {/* {loading ? <h2> LOADING ...</h2> : null} */}
     </Container>
     </>
   )
 }
 
-export default ProdItems;
+export default ProductItems;
