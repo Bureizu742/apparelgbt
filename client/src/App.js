@@ -68,6 +68,10 @@ function App() {
         path="*" 
         element={<badPage />} 
         />
+        <Route 
+         path="/goodPage" 
+        element={<goodPage />} 
+         />
       </Routes>
       </StoreProvider>
     </Router>
