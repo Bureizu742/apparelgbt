@@ -1,6 +1,6 @@
 import React from 'react';
 import { useStoreContext } from '../utils/GlobalState';
-import { ADD_TO_CART, UPDATE_CART_QUANTITY,  } from '../utils/actions';
+import { ADD_TO_CART, UPDATE_CART_QUANTITY, } from '../utils/actions';
 import { idbPromise } from '../utils/helpers';
 import { Link } from "react-router-dom";
 import { pluralize } from "../utils/helpers"
@@ -66,8 +66,10 @@ const Icon = styled.div`
 `;
 
 const Prod = styled.div`
-  display: inline-block;
-  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
 `;
 
 
@@ -101,13 +103,15 @@ function ProductItems(item) {
     price,
     quantity
   } = item;
-  console.log('ID', id)
+  // console.log('ID', id)
 
-  const { cart } = state
+  const { cart, products } = state;
 
   const addToCart = () => {
-    const itemInCart = cart.find((cartItem) => cartItem._id === id)
+    console.log(cart)
+    const itemInCart = products.find((cartItem) => cartItem._id === id)
     if (itemInCart) {
+      console.log(cart)
       dispatch({
         type: UPDATE_CART_QUANTITY,
         _id: id,
@@ -127,21 +131,22 @@ function ProductItems(item) {
   }
   return (
     <>
-    <Container>
-    <Link to={`/products/${id}`}>
-        <Image
-          alt={name}
-          src={`${path.join(process.env.PUBLIC_URL, `${image}`)}`} 
+      <Container>
+        <Link to={`/products/${id}`}>
+          <Image
+            alt={name}
+            src={`${path.join(process.env.PUBLIC_URL, `${image}`)}`}
           />
+
+        </Link>
+        {/* {loading ? <h2> LOADING ...</h2> : null} */}
+      </Container>
+      <Prod>
         <p>{name}</p>
-      </Link>
-      <div>
         <div>{quantity} {pluralize("item", quantity)} in stock</div>
         <span>${price}</span>
-      </div>
-      <button onClick={addToCart}>Add to cart</button>
-      {/* {loading ? <h2> LOADING ...</h2> : null} */}
-    </Container>
+        <button onClick={addToCart}>Add to Cart</button>
+      </Prod>
     </>
   )
 }
