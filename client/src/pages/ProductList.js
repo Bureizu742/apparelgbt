@@ -10,9 +10,6 @@ import Categories from '../components/Categories'
 
 const Container = styled.div``
 
-const Title = styled.h1`
-  margin: 20px;
-`
 
 const FilterContainer = styled.div`
   display: flex;
@@ -34,13 +31,13 @@ const Select = styled.select`
   margin-right: 20px;
   ${mobile({ margin: "10px 0px" })}
 `;
+
 const Option = styled.option``;
 function ProductList() {
   return (
     <Container>
       <Navbar />
       <Broadcast />
-      <Title> Womens</Title>
       <Categories />
       <FilterContainer>
         <Filter>

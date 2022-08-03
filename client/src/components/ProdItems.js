@@ -3,6 +3,8 @@ import { useStoreContext } from '../utils/GlobalState';
 import { ADD_TO_CART, UPDATE_CART_QUANTITY } from '../utils/actions';
 import { idbPromise } from '../utils/helpers';
 import { ShoppingCartOutlined } from '@material-ui/icons';
+import { Link } from "react-router-dom";
+import { pluralize } from "../utils/helpers"
 import path from 'path';
 
 import styled from 'styled-components';
@@ -70,7 +72,6 @@ const Prod = styled.div`
 
 function ProdItems(item) {
   const [state, dispatch] = useStoreContext();
-
   const {
     image,
     name,
@@ -78,6 +79,7 @@ function ProdItems(item) {
     price,
     quantity
   } = item;
+  console.log('ID', _id)
 
   const { cart } = state
 
@@ -104,18 +106,19 @@ function ProdItems(item) {
   return (
     <>
     <Container>
-      <Image src={`${path.join(process.env.PUBLIC_URL, `${image}`)}`} />
-      <Info>
-        <Icon>
-          <ShoppingCartOutlined onClick={addToCart} />
-        </Icon>
-      </Info>
+    <Link to={`/products/${_id}`}>
+        <Image
+          alt={name}
+          src={`${path.join(process.env.PUBLIC_URL, `${image}`)}`} 
+          />
+        <p>{name}</p>
+      </Link>
+      <div>
+        <div>{quantity} {pluralize("item", quantity)} in stock</div>
+        <span>${price}</span>
+      </div>
+      <button onClick={addToCart}>Add to cart</button>
     </Container>
-    <Prod>
-    <p>{name}</p>
-    <p>{quantity} in stock</p>
-    <p>${price}</p>
-    </Prod>
     </>
   )
 }

@@ -42,16 +42,19 @@ export const categories = [
     id:1 ,
     img: jeans,
     title: "CLASSIC DENIM",
+    category: "bottoms"
   },
   {
     id:2 ,
     img: tops,
     title: "STAPLE TOPS",
+    cat: "tops"
   },
   {
     id:3 ,
     img: sets,
     title: "LOUNGEWEAR",
+    cat: "sets"
   },
 ]
 

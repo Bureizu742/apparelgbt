@@ -62,7 +62,7 @@ function CatItems ({item}) {
       <Info>
         <Title>{item.title}</Title>
         <Button> 
-              <StyledLink to= "/products"> SHOP NOW 
+              <StyledLink to= {`/products/${item.cat}`}> SHOP NOW 
               </StyledLink></Button>
         </Info> 
     </Container>
