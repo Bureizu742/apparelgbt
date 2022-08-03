@@ -5,6 +5,7 @@ import Auth from "../utils/auth";
 import { mobile } from '../responsive'
 import { Link } from "react-router-dom";
 import Cart from '../components/Cart'
+import auth from '../utils/auth';
 const Container = styled.div`
  height: 60px;
  margin-bottom: 20px;
@@ -91,7 +92,7 @@ function Navbar() {
         <StyledLink to="/orderHistory">
         Order History
       </StyledLink> 
-      <StyledLink to="/"> LOGOUT</StyledLink>
+      <a href='/' onClick={() => auth.logout()}> LOGOUT</a>
         </>
       )
   } else {
