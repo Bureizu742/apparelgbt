@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components';
 import { mobile } from "../responsive";
+import { Link } from "react-router-dom";
 
 const Container = styled.div`
   flex: 1;
@@ -34,13 +35,16 @@ const Title = styled.h1`
   font-size: 70px;
 `;
 
-const Button = styled.button`
-  border: none;
+const StyledLink = styled(Link)  `
   padding: 10px;
+  font-size: 15px;
   background-color: white;
   color: black;
-  cursor: pointer;
   font-weight: bold;
+  cursor: pointer;
+  text-decoration: none;
+  border-radius: 10px;
+  ${mobile({ fontSize: "12px", marginLeft: "10px" })}
 `;
 
 function FeaturedItems ({item}) {
@@ -49,7 +53,7 @@ function FeaturedItems ({item}) {
       <Image src={item.img}/>
       <Info>
         <Title>{item.title}</Title>
-        <Button> SHOP NOW </Button>
+        <StyledLink to="/products"> SHOP NOW </StyledLink>
         </Info> 
     </Container>
   )

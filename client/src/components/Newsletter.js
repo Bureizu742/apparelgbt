@@ -5,13 +5,14 @@ import { validateEmail } from '../utils/helpers';
 import { mobile } from "../responsive";
 
 const Container = styled.div`
-  height: 60vh;
+  height: 50vh;
   background-color: #cfcfc4;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   color: white;
+  margin-top: 60px;
 `;
 
 const Title = styled.h1`

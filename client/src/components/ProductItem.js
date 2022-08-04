@@ -7,28 +7,27 @@ import styled from 'styled-components';
 
 const Container = styled.div`
   flex: 1;
-  vertical-align: top;
-  display: inline-block;
-  flex-direction: row;
-  flex-wrap: wrap;
 `;
 
 const Image = styled.img`
-  height: 75%;
-  width: 75%;
-  object-fit: cover;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  height: 80%;
+  width: 90%;
+  font-size: 15px;
 `;
 
 const Prod = styled.div`
-  display: block;
-  margin: 20px 20px 20px 20px;
-  font-size: 15px;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+  text-align: center;
+  margin-top: 30px;
 `;
 
 const Price = styled.p`
+  font-weight: bold;
+`;
+
+const Name = styled.h3`
   font-weight: bold;
 `;
 
@@ -52,7 +51,7 @@ function ProductItems(item) {
       />
       </Link>
       <Prod>
-        <p>{name}</p>
+        <Name>{name}</Name>
         <div>{quantity} {pluralize("item", quantity)} in stock</div>
         <Price>${price}</Price>
       </Prod>
