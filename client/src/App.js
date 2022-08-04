@@ -14,6 +14,8 @@ import Login from './pages/Login'
 import Detail from './pages/Detail';
 import OrderHistory from './pages/OrderHistory';
 import Products from './components/Products';
+import Success from './pages/GoodPage';
+import BadPage from './pages/BadPage';
 
 const httpLink = createHttpLink({
   uri: '/graphql',
@@ -66,11 +68,11 @@ function App() {
         />
         <Route
         path="*" 
-        element={<badPage />} 
+        element={<BadPage />} 
         />
         <Route 
-         path="/goodPage" 
-        element={<goodPage />} 
+         path="/GoodPage" 
+        element={<Success />} 
          />
       </Routes>
       </StoreProvider>

@@ -1,6 +1,6 @@
 import React from "react";
 
-const badPage = () =>{
+const BadPage = () =>{
     return(
         <>
     <h1>404 Page Not Found</h1>
@@ -8,4 +8,4 @@ const badPage = () =>{
         </>
     )
 }
-export default badPage;
+export default BadPage;

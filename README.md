@@ -40,10 +40,11 @@
 *	Component and page styling (Style your component, alternate screen share)
 
 # Day Three: 🎨
-*   HEROKU DEPLOYMENT (FIRST THING AM)
+*   HEROKU DEPLOYMENT (FIRST THING AM)✔️
 *   Checkout Page
-*   Product page fixes, styling (Jala)
-*   Category Menu (Charles)
+*   Product page fixes, styling (Jala)✔️
+*   Detail page
+*   Category Menu (Charles) (TBD)
 *   Order history (Patrick)
 *   Service worker (Connor)
 *   Delete button (Connor)
