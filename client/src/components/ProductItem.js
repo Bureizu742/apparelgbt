@@ -6,13 +6,13 @@ import styled from 'styled-components';
 // import { ShoppingCartOutlined } from '@material-ui/icons';
 
 const Container = styled.div`
-  flex: 1;
+  display: flex;
+  flex-direction: column;
+    
 `;
 
 const Image = styled.img`
   display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
   height: 80%;
   width: 90%;
   font-size: 15px;

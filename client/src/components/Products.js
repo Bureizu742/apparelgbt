@@ -11,9 +11,11 @@ import Newsletter from './Newsletter';
 import Footer from './Footer';
 
 const Container = styled.div`
-  padding: 20px;
-  display: flex;
-  
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-auto-rows: auto;
+  grid-gap: 20px;
+  width: 100%;
 `;
 
 function Products() {
@@ -59,7 +61,6 @@ function Products() {
     <Container >
     {filterProducts().map((product) => (
         <ProductItem 
-        className="product-container"
         key={product._id}
         id={product._id}
         image={product.image}
