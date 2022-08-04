@@ -12,7 +12,7 @@ const Container = styled.div`
   justify-content: center;
   flex-direction: column;
   color: white;
-  margin-top: 60px;
+  margin-top: 250px;
 `;
 
 const Title = styled.h1`
