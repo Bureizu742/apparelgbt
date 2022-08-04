@@ -30,6 +30,7 @@ const SocIcon = styled.div`
   align-items: center;
   justify-content: center;
   margin-right: 20px;
+  cursor: pointer;
 `;
 const Center = styled.div`
   flex:1;
@@ -49,6 +50,7 @@ const List = styled.ul`
 const ListItem = styled.li`
   width: 50%;
   margin-bottom: 10px;
+  cursor: pointer;
 `;
 const Right = styled.div`
   flex:1;
@@ -62,9 +64,9 @@ const ContactItem = styled.div`
   align-items: center;
 `;
 
-// const Payment = styled.img`
-//   width: 50%;
-// `
+const Payment = styled.img`
+  width: 50%;
+`
 function Footer() {
   return (
     <Container>
@@ -104,10 +106,7 @@ function Footer() {
         <ContactItem> <Room style={{marginRight: "10px"}} /> 8600 Los Angeles, CA </ContactItem>
         <ContactItem> <Phone style={{marginRight: "10px"}} /> 123-069-0420 </ContactItem>
         <ContactItem> <MailOutline style={{marginRight: "10px"}} /> contactus@apparelgbt.mail </ContactItem>
-        <img
-            src="../images/payment.png"
-            alt="payment methods"
-          />
+        <Payment img src="assets/payment.jpeg" />
       </Right>
     </Container>
   )

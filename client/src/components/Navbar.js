@@ -50,12 +50,6 @@ const Center = styled.div`
   margin-left: 200px;
 `;
 
-const Logo = styled.h1`
-font-weight: bold;
-font-style: italic;
-${mobile({ fontSize: "24px" })}
-`;
-
 const Right = styled.div`
   flex: 1;
   display: flex;
@@ -123,7 +117,7 @@ function Navbar() {
           </SearchContainer>
         </Left>
         <Center> 
-          <NavLink to="/"> appareLGBT. </NavLink> 
+          <NavLink to="/"> appareLGBT </NavLink> 
             </Center>
         <Right>
           <LinkItem> 
