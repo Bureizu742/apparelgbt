@@ -4,7 +4,6 @@ import Navbar from '../components/Navbar';
 import Carousel from '../components/Carousel';
 import Newsleter from '../components/Newsletter';
 import Footer from '../components/Footer';
-import Mission from '../components/Mission';
 import { mobile } from "../responsive";
 import styled from 'styled-components';
 import Featured from '../components/Featured';
@@ -21,7 +20,6 @@ function Home() {
     <div>
       <Broadcast />
       <Navbar />
-      <Mission />
       <Carousel />
       <Featured />
       <Container>

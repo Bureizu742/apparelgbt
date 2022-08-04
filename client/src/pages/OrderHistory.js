@@ -7,30 +7,46 @@ import { QUERY_USER } from '../utils/queries';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 
+const Title = styled.h2`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+const OrderDate = styled.h3`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+`;
 const CardContainer = styled.div`
-  
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
 
 const Card = styled.div`
-  width: fit-content;
-  border: 4px solid;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border-radius: 8px;
   display: block;
   padding: 4px;
-  margin: 4px;
+  margin-bottom: 40px;
 `;
 
 const Image = styled.img`
-  max-height: 200px;
+  max-height: 400px;
   max-width: auto;
+`;
+const Name = styled.p`
+  text-align: center;
 `;
 
 const Price = styled.div`
-  border: 4px solid;
-  border-radius: 8px;
   display: block;
   padding: 4px;
   margin: 4px;
+  text-align: center;
 `;
 
 const StyledLink = styled(Link)`
@@ -40,9 +56,6 @@ const StyledLink = styled(Link)`
   font-weight: bold;
   color: black;
   text-decoration: none;
-  &:hover {
-    color: black;
-  }
 `;
 
 function OrderHistory() {
@@ -59,20 +72,22 @@ function OrderHistory() {
 
         {user ? (
           <>
-            <h2>
+            <Title>
               Order History for {user.firstName}
-            </h2>
+            </Title>
             {user.orders.map((order) => (
               <div key={order._id}>
+                <OrderDate> 
                 <h3>
                   {new Date(parseInt(order.purchaseDate)).toLocaleDateString()}
                 </h3>
+                </OrderDate>
                 {order.products.map(({ _id, image, name, price }, index) => (
                   <CardContainer>
                     <Card key={index}>
                       <StyledLink to={`/products/${_id}`}>
                         <Image alt={name} src={`${image}`} />
-                        <p>{name}</p>
+                        <Name>{name}</Name>
                       </StyledLink>
                       <Price>
                         <span>${price}</span>
