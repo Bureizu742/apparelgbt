@@ -7,6 +7,7 @@ import Footer from '../components/Footer';
 import Mission from '../components/Mission';
 import { mobile } from "../responsive";
 import styled from 'styled-components';
+import Featured from '../components/Featured';
 
 const Container = styled.div`
   display: flex; 
@@ -22,6 +23,7 @@ function Home() {
       <Navbar />
       <Mission />
       <Carousel />
+      <Featured />
       <Container>
       </Container>
       <Newsleter />
