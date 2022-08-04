@@ -22,6 +22,7 @@ const Prod = styled.div`
   margin: 20px 20px 20px 20px;
   font-size: 15px;
 `;
+
 const Price = styled.p`
   font-weight: bold;
 `;

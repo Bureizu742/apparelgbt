@@ -8,21 +8,25 @@ const Container = styled.div`
   display: flex;
   ${mobile({ flexDirection: "column" })}
 `;
+
 const Left = styled.div`
   flex:1;
   display: flex;
   flex-direction: column;
   padding: 20px;
 `;
+
 const Logo = styled.h1`
 `;
 
 const Description = styled.p`
   margin: 20px 0px;
 `;
+
 const Socials = styled.div`
   display: flex;
 `;
+
 const SocIcon = styled.div`
   width: 40px;
   height: 40px;
@@ -33,14 +37,17 @@ const SocIcon = styled.div`
   margin-right: 20px;
   cursor: pointer;
 `;
+
 const Center = styled.div`
   flex:1;
   padding: 20px;
   ${mobile({ display: "none" })}
 `;
+
 const Title = styled.h3`
   margin-bottom: 30px;
 `;
+
 const List = styled.ul`
   margin: 0px;
   padding: 0px;
@@ -48,11 +55,13 @@ const List = styled.ul`
   display: flex;
   flex-wrap: wrap;
 `;
+
 const ListItem = styled.li`
   width: 50%;
   margin-bottom: 10px;
   cursor: pointer;
 `;
+
 const Right = styled.div`
   flex:1;
   padding: 20px;
@@ -66,7 +75,7 @@ const ContactItem = styled.div`
 `;
 
 const StyledLink = styled(Link)`
-font-size: 14px;
+  font-size: 14px;
   cursor: pointer;
   margin-left: 25px;
   font-weight: bold;
@@ -76,11 +85,11 @@ font-size: 14px;
     color: black;
   }
   ${mobile({ fontSize: "12px", marginLeft: "10px" })}
-`
+`;
 
-const Payment = styled.img`
-  width: 50%;
-`
+// const Payment = styled.img`
+//   width: 50%;
+// `;
 function Footer() {
   return (
     <Container>
@@ -107,19 +116,16 @@ function Footer() {
             <StyledLink to="/">HOME</StyledLink>
           </ListItem>
           <ListItem>
-          <StyledLink to="/">CART</StyledLink>
-            </ListItem>
-          <ListItem>
-            <StyledLink to="/">TOPS</StyledLink>
+            <StyledLink to="/orderHistory">ORDERS</StyledLink>
           </ListItem>
           <ListItem>
-          <StyledLink to="/">BOTTOMS</StyledLink>
+            <StyledLink to="/products">TOPS</StyledLink>
           </ListItem>
           <ListItem>
-          <StyledLink to="/">ACCESSORIES</StyledLink>
+            <StyledLink to="/products">BOTTOMS</StyledLink>
           </ListItem>
           <ListItem>
-          <StyledLink to="/">ORDERS</StyledLink>
+            <StyledLink to="/products">ACCESSORIES</StyledLink>
           </ListItem>
         </List>
       </Center>

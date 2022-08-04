@@ -11,12 +11,12 @@ const Container = styled.div`
   font-size: 30x;
   font-weight: bold;
   font-style: italic;
-`
+`;
 
 function Mission() {
   return (
     <Container> 
-      our mission is to give a platform to lgbtq+ designers, and carve a space for pride items seperate from a cooperation.
+      Our mission is to give a platform to LGBTQ+ designers, and carve a space for pride items seperate from a corporation.
     </Container>
   )
 }
