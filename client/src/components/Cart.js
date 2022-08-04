@@ -129,7 +129,7 @@ const Cart = () => {
   return (
     <CartToggler>
       <CloseCart onClick={toggleCart}>
-        <DeleteOutline/>
+        X
       </CloseCart>
       <h2>Shopping Cart</h2>
       {state.cart.length ? (
