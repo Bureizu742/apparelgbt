@@ -36,9 +36,12 @@ position: absolute;
 `;
 
 const Info = styled.div`
-  width: 50px;
+  width: 90px;
   padding: 0;
-  margin: 0px 20px 20px 0px;
+  margin-left: 20px;
+`;
+const Total = styled.div`
+
 `;
 
 const ClosedCart = styled.div`
@@ -135,7 +138,7 @@ const Cart = () => {
             <CartItem key={item._id} item={item} />
           ))}
 
-          <div className="flex-row space-between">
+          <Total>
             <strong>Total: ${calculateTotal()}</strong>
 
             {Auth.loggedIn() ? (
@@ -143,7 +146,7 @@ const Cart = () => {
             ) : (
               <span>(log in to check out)</span>
             )}
-          </div>
+          </Total>
         </Info>
       ) : (
         <h3>
