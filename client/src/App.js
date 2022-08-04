@@ -14,8 +14,8 @@ import Login from './pages/Login'
 import Detail from './pages/Detail';
 import OrderHistory from './pages/OrderHistory';
 import Products from './components/Products';
-import Success from './pages/-GoodPage';
-import BadPage from './pages/-BadPage';
+import Success from './pages/GoodPage';
+import BadPage from './pages/BadPage';
 
 const httpLink = createHttpLink({
   uri: '/graphql',
