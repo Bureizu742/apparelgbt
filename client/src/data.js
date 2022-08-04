@@ -12,6 +12,9 @@ const miset2 = `${path.join(PUBLIC_URL,'assets/sets/suits.jpeg')}`
 const top5 = `${path.join(PUBLIC_URL,'assets/tops/linentops.jpeg')}`
 const top4 = `${path.join(PUBLIC_URL,'assets/tops/lovetee.jpeg')}`
 const top3 = `${path.join(PUBLIC_URL,'assets/tops/noshirtpaired.jpeg')}`
+const rainbow = `${path.join(PUBLIC_URL,'assets/tops/rainbowSweater.jpeg')}`
+const sweatersgroup = `${path.join(PUBLIC_URL,'assets/tops/sweatersgroup.jpeg')}`
+const denimchair = `${path.join(PUBLIC_URL,'assets/bottoms/denimchair.jpeg')}`
 // const jeans2 = `${path.join(PUBLIC_URL,'assets/misc/stickers.jpeg')}`
 // const wsocial = `${path.join(PUBLIC_URL,'assets/misc/nonbracelet.jpeg')}`
 // const jeans1 = `${path.join(PUBLIC_URL,'assets/misc/plusflag.jpeg')}`
@@ -19,14 +22,14 @@ const top3 = `${path.join(PUBLIC_URL,'assets/tops/noshirtpaired.jpeg')}`
 export const carouselItems = [
   {
   id: 1,
-  img: imgOne,
+  img: rainbow,
   title: "RAINBOW COLLECTION",
   description: "20% OFF THROUGH JUNE",
 },
   {
   id: 2,
   img: imgTwo,
-  title: "COZY COLLECTION",
+  title: "COZY CORE",
   description: "SHOP OUR NEW DROPS",
 },
   {
@@ -40,19 +43,19 @@ export const carouselItems = [
 export const categories = [
   {
     id:1 ,
-    img: jeans,
+    img: denimchair,
     title: "CLASSIC DENIM",
     category: "bottoms"
   },
   {
     id:2 ,
-    img: tops,
+    img: sweatersgroup,
     title: "STAPLE TOPS",
     cat: "tops"
   },
   {
     id:3 ,
-    img: sets,
+    img: mset1,
     title: "LOUNGEWEAR",
     cat: "sets"
   },
