@@ -22,14 +22,12 @@ const Wrapper = styled.div`
 `;
 
 const Container = styled.div`
-`;
-
+  `
 const Info = styled.div`
   flex: 1;
   margin-left: 500px;
   margin-top: 40px;
-`;
-
+  `
 const ImageContainer = styled.div`
   margin-top: 20px;
   flex: 1;
@@ -37,7 +35,7 @@ const ImageContainer = styled.div`
   width: 50vw;
   height: 50vh;
   overflow: hidden;
-`;
+  `
 
 function Detail() {
   const [state, dispatch] = useStoreContext();
