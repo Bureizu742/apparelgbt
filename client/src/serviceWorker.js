@@ -1,7 +1,3 @@
-/* eslint-disable no-restricted-globals */
-import { precacheAndRoute } from 'workbox-precaching';
-
-precacheAndRoute(self.__WB_MANIFEST);
 
 const isLocalhost = Boolean(
     window.location.hostname === 'localhost' ||
