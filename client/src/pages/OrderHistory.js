@@ -7,13 +7,22 @@ import { QUERY_USER } from '../utils/queries';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 
-const Card = styled.div`
+const CardContainer = styled.div`
 
+`;
+
+const Card = styled.div`
+  width: fit-content;
   border: 4px solid;
   border-radius: 8px;
   display: block;
   padding: 4px;
   margin: 4px;
+`;
+
+const Image = styled.img`
+  max-height: 200px;
+  max-width: auto;
 `;
 
 const Price = styled.div`
@@ -32,7 +41,7 @@ const StyledLink = styled(Link)`
   color: black;
   text-decoration: none;
   &:hover {
-    color: orange;
+    color: black;
   }
 `;
 
@@ -46,7 +55,7 @@ function OrderHistory() {
     <>
       <Navbar />
       <div className="container my-1">
-        <Link to="/">← Back to Home</Link>
+        <StyledLink to="/">← Back to Home</StyledLink>
 
         {user ? (
           <>
@@ -59,17 +68,17 @@ function OrderHistory() {
                   {new Date(parseInt(order.purchaseDate)).toLocaleDateString()}
                 </h3>
                 {order.products.map(({ _id, image, name, price }, index) => (
-                  <div>
+                  <CardContainer>
                     <Card key={index}>
                       <StyledLink to={`/products/${_id}`}>
-                        <img alt={name} src={`${image}`} />
+                        <Image alt={name} src={`${image}`} />
                         <p>{name}</p>
                       </StyledLink>
                       <Price>
                         <span>${price}</span>
                       </Price>
                     </Card>
-                  </div>
+                  </CardContainer>
                 ))}
               </div>
             ))}
