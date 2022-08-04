@@ -8,7 +8,7 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 
 const CardContainer = styled.div`
-
+  
 `;
 
 const Card = styled.div`
