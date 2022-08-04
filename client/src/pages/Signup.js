@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
 import styled from 'styled-components';
 import { mobile } from "../responsive";
@@ -9,18 +9,17 @@ import { ADD_USER } from '../utils/mutations';
 const Container = styled.div`
   width: 100vw;
   height: 100vh;
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-color: #f3f5f4;
+  background-color: #f4f0ec;
   display: flex;
   align-items: center;
   justify-content: center;
 `;
 
 const Wrapper = styled.div`
-  width: 40%;
+  width: 25%;
   padding: 20px;
-  background-color: #cfcfc4;
+  background-color: #778899;
+  color: #f4f0ec;
   ${mobile({ width: "75%" })}
 `;
 
@@ -38,7 +37,7 @@ const Input = styled.input`
   flex: 1;
   min-width: 40%;
   margin: 10px 10px 0px 0px;
-  padding: 10px
+  padding: 10px;
 `;
 
 const Conditions = styled.span`
@@ -47,13 +46,25 @@ const Conditions = styled.span`
 `;
 
 const Button = styled.button`
-  width: 40%;
+  width: 50%;
   border: none;
   padding: 15px 20px;
   background-color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: bold;
+  color: #778899;
   cursor: pointer;
+  margin-bottom: 10px;
 `;
-
+const StyledLink = styled(Link)  `
+  font-size: 15px;
+  cursor: pointer;
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+`
 function Signup(props) {
   const [formState, setFormState] = useState({ username: '', email: '', password: '' });
   const [addUser] = useMutation(ADD_USER);
@@ -126,6 +137,7 @@ function Signup(props) {
           </Conditions>
           <Button type='submit'> CREATE ACCOUNT</Button>
         </Form>
+        <StyledLink to="/"> Back to Home</StyledLink>
       </Wrapper>
     </Container>
   )

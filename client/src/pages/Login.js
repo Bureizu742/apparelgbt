@@ -1,4 +1,5 @@
 import { useMutation } from '@apollo/client';
+import { Link } from 'react-router-dom';
 import React, { useState } from 'react';
 import { LOGIN_USER } from '../utils/mutations';
 import styled from 'styled-components'
@@ -8,8 +9,6 @@ import Auth from '../utils/auth';
 const Container = styled.div`
   width: 100vw;
   height: 100vh;
-  background-repeat: no-repeat;
-  background-size: contain;
   background-color: #f4f0ec;
   display: flex;
   justify-content: center;
@@ -20,6 +19,7 @@ const Wrapper = styled.div`
   width: 25%;
   padding: 20px;
   background-color: #778899;
+  color: #f4f0ec;
   ${mobile({ width: "75%" })}
 `;
 
@@ -43,14 +43,22 @@ const Input = styled.input`
 const Button = styled.button`
   width: 40%;
   border: none;
-  padding: 15px 20px;
+  padding: 10px 15px;
   background-color: white;
   cursor: pointer;
-  margin-bottom: 10px;
-  display: flex;
-  flex-direction: column;
+  border: none;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: bold;
+  color: #778899;
 `;
-
+const StyledLink = styled(Link)  `
+  font-size: 15px;
+  cursor: pointer;
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+`
 
 function Login () {
   const [formState, setFormState] = useState({ username: '', password: ''});
@@ -103,9 +111,8 @@ function Login () {
           </div>
         ) : null}
           <Button type='submit'> LOGIN</Button>
-          <Button> FORGOT PASSWORD? </Button>
-          <Button> CREATE A NEW ACCOUNT</Button>
         </Form>
+        <StyledLink to="/">Back to Home</StyledLink>
       </Wrapper>
     </Container>
   )
