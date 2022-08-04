@@ -1,5 +1,6 @@
 import { Instagram, MailOutline, Phone, Pinterest, Room, Twitter } from '@material-ui/icons';
 import React from 'react'
+import { Link } from "react-router-dom";
 import styled from 'styled-components'
 import { mobile } from "../responsive";
 
@@ -64,6 +65,19 @@ const ContactItem = styled.div`
   align-items: center;
 `;
 
+const StyledLink = styled(Link)`
+font-size: 14px;
+  cursor: pointer;
+  margin-left: 25px;
+  font-weight: bold;
+  color: black;
+  text-decoration: none;
+  &:hover {
+    color: black;
+  }
+  ${mobile({ fontSize: "12px", marginLeft: "10px" })}
+`
+
 const Payment = styled.img`
   width: 50%;
 `
@@ -89,23 +103,31 @@ function Footer() {
       <Center>
         <Title> SHOP </Title>
         <List>
-          <ListItem>HOME</ListItem>
-          <ListItem>CART </ListItem>
-          <ListItem>TOPS</ListItem>
-          <ListItem>BOTTOMS</ListItem>
-          <ListItem>SKIRTS/DRESSES</ListItem>
-          <ListItem>ACCESSORIES</ListItem>
-          <ListItem>MISC</ListItem>
-          <ListItem>MY ACCOUNT</ListItem>
-          <ListItem>ORDERS</ListItem>
-          <ListItem>TERMS</ListItem>
+          <ListItem>
+            <StyledLink to="/">HOME</StyledLink>
+          </ListItem>
+          <ListItem>
+          <StyledLink to="/">CART</StyledLink>
+            </ListItem>
+          <ListItem>
+            <StyledLink to="/">TOPS</StyledLink>
+          </ListItem>
+          <ListItem>
+          <StyledLink to="/">BOTTOMS</StyledLink>
+          </ListItem>
+          <ListItem>
+          <StyledLink to="/">ACCESSORIES</StyledLink>
+          </ListItem>
+          <ListItem>
+          <StyledLink to="/">ORDERS</StyledLink>
+          </ListItem>
         </List>
       </Center>
       <Right>
         <Title> Contact Us </Title>
-        <ContactItem> <Room style={{marginRight: "10px"}} /> 8600 Los Angeles, CA </ContactItem>
-        <ContactItem> <Phone style={{marginRight: "10px"}} /> 123-069-0420 </ContactItem>
-        <ContactItem> <MailOutline style={{marginRight: "10px"}} /> contactus@apparelgbt.mail </ContactItem>
+        <ContactItem> <Room style={{ marginRight: "10px" }} /> 8600 Los Angeles, CA </ContactItem>
+        <ContactItem> <Phone style={{ marginRight: "10px" }} /> 123-069-0420 </ContactItem>
+        <ContactItem> <MailOutline style={{ marginRight: "10px" }} /> contactus@apparelgbt.mail </ContactItem>
         {/* <Payment img src={process.env.PUBLIC_URL + "assets/payment.jpeg"} /> */}
       </Right>
     </Container>

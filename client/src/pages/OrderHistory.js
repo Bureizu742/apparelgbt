@@ -4,6 +4,9 @@ import { Link } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 import { QUERY_USER } from '../utils/queries';
 
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
+
 function OrderHistory() {
   const { data } = useQuery(QUERY_USER);
   let user;
@@ -12,13 +15,14 @@ function OrderHistory() {
 
   return (
     <>
+      <Navbar />
       <div className="container my-1">
-        <Link to="/">← Back to Products</Link>
+        <Link to="/">← Back to Home</Link>
 
         {user ? (
           <>
             <h2>
-              Order History for {user.firstName} {user.lastName}
+              Order History for {user.firstName}
             </h2>
             {user.orders.map((order) => (
               <div key={order._id}>
@@ -43,6 +47,7 @@ function OrderHistory() {
           </>
         ) : null}
       </div>
+      <Footer />
     </>
   );
 }
