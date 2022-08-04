@@ -31,8 +31,10 @@ const Info = styled.div`
 const ImageContainer = styled.div`
   margin-top: 20px;
   flex: 1;
-  /* max-width: 50%;
-  max-height: 50%; */
+  border: 5px black solid;
+  width: 50vw;
+  height: 50vh;
+  overflow: hidden;
   `
 
 function Detail() {
@@ -121,6 +123,7 @@ function Detail() {
         </Info>
         <ImageContainer> 
           <img
+            style={{height:"40vh", width: "40vw", objectFit: "cover"}}
             src={`/${currentProduct.image}`}
             alt={currentProduct.name}
           />
