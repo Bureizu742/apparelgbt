@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, { useEffect } from 'react';
 import styled from 'styled-components';
 import ProductItem from './ProductItem';
 import { useStoreContext } from '../utils/GlobalState';
@@ -12,11 +12,20 @@ import Footer from './Footer';
 
 const Container = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   grid-auto-rows: auto;
   grid-gap: 20px;
-  width: 100%;
+  width: 100vw;
+  height: 100vh;
+  row-gap: 100px;
+  margin-left: 15px;
+  margin-top: 70px;
 `;
+
+const Div = styled.div`
+  font-size: 20px;
+
+`
 
 function Products() {
   const [state, dispatch] = useStoreContext();
@@ -55,29 +64,31 @@ function Products() {
   }
 
   return (
-    <> 
-    <Navbar />
+    <>
+      <Navbar />
       {state.products.length ? (
-    <Container >
-    {filterProducts().map((product) => (
-        <ProductItem 
-        key={product._id}
-        id={product._id}
-        image={product.image}
-        name={product.name}
-        price={product.price}
-        quantity={product.quantity}
-        />
-      ))}
-      </Container>
+        <Container >
+          {filterProducts().map((product) => (
+            <Div>
+              <ProductItem
+                key={product._id}
+                id={product._id}
+                image={product.image}
+                name={product.name}
+                price={product.price}
+                quantity={product.quantity}
+              />
+            </Div>
+          ))}
+        </Container>
       ) : (
         <h3>You haven't added any products yet!</h3>
       )}
       {loading ? <h2> LOADING ...</h2> : null}
-    <Newsletter />
-    <Footer />
+      <Newsletter />
+      <Footer />
     </>
   )
- };
+};
 
 export default Products

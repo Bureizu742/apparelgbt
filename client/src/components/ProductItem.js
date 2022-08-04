@@ -29,6 +29,8 @@ const Price = styled.p`
 
 const Name = styled.h3`
   font-weight: bold;
+  font-size: 40px;
+  padding-bottom: 10px;
 `;
 
 
