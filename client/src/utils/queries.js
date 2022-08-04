@@ -60,11 +60,23 @@ export const QUERY_CATEGORIES = gql`
 `;
 
 export const QUERY_USER = gql`
-  query user($id: ID) {
-    user(id: $id) {
-      _id
+  {
+    user {
       username
-      email
+      firstName
+      lastName
+      orders {
+        _id
+        purchaseDate
+        products {
+          _id
+          name
+          description
+          price
+          quantity
+          image
+        }
+      }
     }
   }
   `;
