@@ -39,6 +39,7 @@ const SearchContainer = styled.div`
   align-items: center;
   margin-left: 25px;
   padding: 5px;
+  ${mobile({ display: "none" })}
 `;
 
 const Input = styled.input`
@@ -47,15 +48,16 @@ const Input = styled.input`
 `;
 
 const Center = styled.div`
-  flex: 1;
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin-left: 200px;
+  ${mobile({ justifyContent: "center" })}
 `;
 
 const Right = styled.div`
   flex: 1;
   display: flex;
-  align-items: center;
   justify-content: flex-end;
   ${mobile({ flex: 2, justifyContent: "center" })}
 `;
@@ -67,25 +69,24 @@ const StyledLink = styled(Link)  `
   font-weight: bold;
   color: black;
   text-decoration: none;
-  &:hover {
-    color: black;
-  }
-  ${mobile({ fontSize: "12px", marginLeft: "10px" })}
+  ${mobile({ display: "none" })}
 `;
 
 const NavLink = styled(Link)  `
   font-weight: bold;
   font-style: italic;
   font-size: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   text-decoration: none;
   color: black;
-  ${mobile({ fontSize: "24px" })}
+  ${mobile({ fontSize: "24px", justifyContent: "center" })}
 `;
 
 const LinkItem = styled.div`
   font-size: 14px;
   cursor: pointer;
-  margin-left: 25px;
   font-weight: bold;
   ${mobile({ fontSize: "12px", marginLeft: "10px" })}
  `;

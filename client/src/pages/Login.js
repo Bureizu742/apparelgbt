@@ -10,16 +10,16 @@ const Container = styled.div`
   height: 100vh;
   background-repeat: no-repeat;
   background-size: contain;
-  background-color: #f3f5f4;
+  background-color: #f4f0ec;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
 `;
 
 const Wrapper = styled.div`
   width: 25%;
   padding: 20px;
-  background-color: #cfcfc4;
+  background-color: #778899;
   ${mobile({ width: "75%" })}
 `;
 
@@ -47,6 +47,8 @@ const Button = styled.button`
   background-color: white;
   cursor: pointer;
   margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
 `;
 
 
