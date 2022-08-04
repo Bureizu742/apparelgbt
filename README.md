@@ -41,14 +41,14 @@
 
 # Day Three: 🎨
 *   HEROKU DEPLOYMENT (FIRST THING AM)✔️
-*   Checkout Page
+*   Checkout Page ✔️
 *   Product page fixes, styling (Jala)✔️
-*   Detail page
-*   Category Menu (Charles) (TBD)
+*   Detail page ✔️
+*   Category Menu (Charles) (TBD) 
 *   Order history (Patrick)
-*   Service worker (Connor)
-*   Delete button (Connor)
-*   Footer Links (Patrick)
+*   Service worker (Connor) 
+*   Delete button (Connor) 
+*   Footer Links (Patrick) 
 *	Component and page styling
 *	Write/style presentation 
 

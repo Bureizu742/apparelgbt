@@ -31,11 +31,17 @@ const Info = styled.div`
 const ImageContainer = styled.div`
   margin-top: 20px;
   flex: 1;
-  border: 5px black solid;
   width: 50vw;
   height: 50vh;
-  overflow: hidden;
-  `
+    `
+const StyledLink = styled(Link)  `
+  font-size: 20px;
+  cursor: pointer;
+  margin-left: 25px;
+  font-weight: bold;
+  color: black;
+  text-decoration: none;
+`
 
 function Detail() {
   const [state, dispatch] = useStoreContext();
@@ -107,7 +113,7 @@ function Detail() {
     <Broadcast />
       {currentProduct && cart ? (
         <Container>
-          <Link to="/products">← Back to Products</Link>
+          <StyledLink to="/products">← Back to Products</StyledLink>
           <Wrapper> 
           <Info> 
           <h2>{currentProduct.name}</h2>
@@ -123,7 +129,7 @@ function Detail() {
         </Info>
         <ImageContainer> 
           <img
-            style={{height:"40vh", width: "40vw", objectFit: "cover"}}
+            style={{height:"60vh", width: "30vw", objectFit: "cover"}}
             src={`/${currentProduct.image}`}
             alt={currentProduct.name}
           />
@@ -132,7 +138,6 @@ function Detail() {
         </Container>
       ) : null}
       {loading ? <h2> LOADING...</h2> : null}
-      <Cart />
           </>
   );
 }
