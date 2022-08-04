@@ -11,6 +11,7 @@ const Container = styled.div`
   display: flex;
   overflow: hidden;
   position: relative; 
+  margin-top: 50px;
   ${mobile({ display: "none" })}
 `;
 
