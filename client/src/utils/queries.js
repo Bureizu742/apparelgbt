@@ -60,11 +60,19 @@ export const QUERY_CATEGORIES = gql`
 `;
 
 export const QUERY_USER = gql`
-  query user($id: ID!) {
+  query user($id: ID) {
     user(id: $id) {
       _id
       username
       email
     }
   }
+  `;
+
+export const QUERY_ALL_USERS = gql`
+  query Query {
+  users {
+    _id
+  }
+}
 `;
