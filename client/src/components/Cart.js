@@ -22,7 +22,7 @@ const CartToggler = styled.div`
   z-index: 2;
   width: 20%;
   height: 20%;
-`
+`;
 
 const CloseCart = styled.div`
 position: absolute;
@@ -33,13 +33,13 @@ position: absolute;
   &&:hover {
     text-decoration: underline;
   }
-`
+`;
 
 const Info = styled.div`
   width: 50px;
   padding: 0;
   margin: 0px 20px 20px 0px;
-`
+`;
 
 const ClosedCart = styled.div`
   font-size: 20px;
@@ -52,14 +52,15 @@ const ClosedCart = styled.div`
   &&:hover {
     transform: rotate(8deg);
   }
-  `
-  const Button = styled.div`
+`;
+
+const Button = styled.div`
   padding: 10px;
   font-size: 20pz;
   background-color: transparent;
   cursor: pointer;
   border-radius: 10px;
-  `
+`;
 
 const stripePromise = loadStripe('pk_test_TYooMQauvdEDq54NiTphI7jx');
 

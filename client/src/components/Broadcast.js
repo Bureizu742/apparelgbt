@@ -10,7 +10,7 @@ const Container = styled.div`
   justify-content: center;
   font-size: 14px;
   font-weight: bold;
-`
+`;
 
 function Broadcast() {
   return (

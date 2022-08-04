@@ -6,6 +6,7 @@ import { mobile } from '../responsive'
 import { Link } from "react-router-dom";
 import Cart from '../components/Cart'
 import auth from '../utils/auth';
+
 const Container = styled.div`
  height: 60px;
  margin-bottom: 20px;
@@ -44,6 +45,7 @@ const Input = styled.input`
   border: none;
   ${mobile({ width: "50px" })}
 `;
+
 const Center = styled.div`
   flex: 1;
   text-align: center;
@@ -59,7 +61,7 @@ const Right = styled.div`
 `;
 
 const StyledLink = styled(Link)  `
-font-size: 14px;
+  font-size: 14px;
   cursor: pointer;
   margin-left: 25px;
   font-weight: bold;
@@ -69,7 +71,8 @@ font-size: 14px;
     color: black;
   }
   ${mobile({ fontSize: "12px", marginLeft: "10px" })}
-`
+`;
+
 const NavLink = styled(Link)  `
   font-weight: bold;
   font-style: italic;
@@ -77,14 +80,15 @@ const NavLink = styled(Link)  `
   text-decoration: none;
   color: black;
   ${mobile({ fontSize: "24px" })}
-`
+`;
+
 const LinkItem = styled.div`
   font-size: 14px;
   cursor: pointer;
   margin-left: 25px;
   font-weight: bold;
   ${mobile({ fontSize: "12px", marginLeft: "10px" })}
-`
+ `;
 
 function Navbar() {
   function loggedInNav() {

@@ -13,6 +13,7 @@ const Container = styled.div`
   position: relative; 
   ${mobile({ display: "none" })}
 `;
+
 const Arrow = styled.div`
   width: 50px;
   height: 50px;
@@ -38,12 +39,14 @@ const Wrapper = styled.div`
   transition: all 1.5s ease;
   transform: translateX(${props => props.carouselIndex * -100}vw);
 `;
+
 const CarouselContainer = styled.div`
   display: flex;
   align-items: center;
   width: 100vw;
   height: 100vh;
-`
+`;
+
 const ImageContainer = styled.div`
   height: 100%;
   flex: 1;
@@ -79,7 +82,7 @@ const Button = styled.button`
 `;
 
 const StyledLink = styled(Link)  `
-font-size: 14px;
+  font-size: 14px;
   cursor: pointer;
   font-weight: bold;
   color: black;
