@@ -57,6 +57,62 @@ db.once('open', async () => {
       quantity: 5,
       category: categories[4]._id
     },
+    {
+      name: 'Item Name 6',
+      description: 'This is a default description',
+      image: 'assets/misc/flagpin.jpeg',
+      price: 24.54,
+      quantity: 5,
+      category: categories[4]._id
+    },
+    {
+      name: 'Item Name 7',
+      description: 'This is a default description',
+      image: 'assets/tops/tops8.jpeg',
+      price: 24.54,
+      quantity: 5,
+      category: categories[0]._id
+    },
+    {
+      name: 'Item Name 8',
+      description: 'This is a default description',
+      image: 'assets/sets/linenset.jpeg',
+      price: 24.54,
+      quantity: 5,
+      category: categories[2]._id
+    },
+    {
+      name: 'Item Name 9',
+      description: 'This is a default description',
+      image: 'assets/misc/pins.jpeg',
+      price: 24.54,
+      quantity: 5,
+      category: categories[2]._id
+    },
+    {
+      name: 'Item Name 10',
+      description: 'This is a default description',
+      image: 'assets/tops/silktops.jpeg',
+      price: 24.54,
+      quantity: 5,
+      category: categories[0]._id
+    },
+    {
+      name: 'Item Name 11',
+      description: 'This is a default description',
+      image: 'assets/acc/rings.jpeg',
+      price: 24.54,
+      quantity: 5,
+      category: categories[3]._id
+    },
+    {
+      name: 'Item Name 12',
+      description: 'This is a default description',
+      image: 'assets/tops/lovetee.jpeg',
+      price: 24.54,
+      quantity: 5,
+      category: categories[0]._id
+    },
   ]);
 
   console.log('Products Seeded!');

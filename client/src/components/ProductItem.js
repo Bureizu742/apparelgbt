@@ -9,6 +9,8 @@ const Container = styled.div`
   flex: 1;
   vertical-align: top;
   display: inline-block;
+  flex-direction: row;
+  flex-wrap: wrap;
 `;
 
 const Image = styled.img`
@@ -21,6 +23,9 @@ const Prod = styled.div`
   display: block;
   margin: 20px 20px 20px 20px;
   font-size: 15px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 `;
 const Price = styled.p`
   font-weight: bold;
