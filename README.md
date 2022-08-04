@@ -1,5 +1,5 @@
 # Day One: Setup/Server 📦
-##	Clone starter code, repos installed locally
+*   Clone starter code, repos installed locally
 *	Models: 
   	* Models written for category, order, and product (Patrick) ✔️
 * Schema: 
@@ -22,28 +22,34 @@
 *	Settle site theme (Group, done no  later than 11am)✔️
 *	Import assets (Group)✔️
 *	Components (Written, not styled):
-    *	Navbar/banner ✔️, carousel, cart/cart items (Jala)
-    * Product items✔️, product list, delete button (Connor)
+    * Navbar/banner, carousel, cart/cart items (Jala/Connor) ✔️
+    * Product items, product list (Jala/Connor) ✔️
     * Category menu, footer ✔️(Patrick)
 *	Utils: 
     * Queries, mutations (Jala) ✔️
-  	* Actions, helpers (Patrick) ✔️
-    * Auth, global state, reducers (Charles)
-*	Src: 
-    * Service worker, app.js (Connor)
+  	* Actions, helpers (Patrick) ✔️ 
+    * Auth, global state, reducers (Charles) ✔️
+   
 
 # Day Three: 💻/🎨
 *	Test Stripe Functionality 
 *	Pages (Written, not styled): 
-    * Home, sign up/login (Charles)
-    *	404, success (Connor)
-    * Order history, detail (Patrick)
+    * sign up/login (Jala/Charles) ✔️
+    * 404, success (Charles) ✔️
+    * Detail (Jala) ✔️
 *	Component and page styling (Style your component, alternate screen share)
 
 # Day Three: 🎨
+*   HEROKU DEPLOYMENT (FIRST THING AM)
+*   Checkout Page
+*   Product page fixes, styling (Jala)
+*   Category Menu (Charles)
+*   Order history (Patrick)
+*   Service worker (Connor)
+*   Delete button (Connor)
+*   Footer Links (Patrick)
 *	Component and page styling
 *	Write/style presentation 
-*	Confirm Heroku deployment
 
 # Day Four: 🧹
 *	Light clean-up

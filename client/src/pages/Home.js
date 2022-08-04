@@ -12,22 +12,20 @@ const Container = styled.div`
   display: flex; 
   padding: 20px;
   justify-content: space-between;
-  ${mobile({ padding: "0px", flexDirection:"column" })}
+  ${mobile({ padding: "0px", flexDirection: "column" })}
 `;
 
 function Home() {
   return (
     <div>
-    <Broadcast />
-    <Navbar />
-    <Mission />
-    <Carousel />
-    <hr />
-    <Container>
+      <Broadcast />
+      <Navbar />
+      <Mission />
+      <Carousel />
+      <Container>
       </Container>
-    <hr />
-    <Newsleter />
-    <Footer />
+      <Newsleter />
+      <Footer />
     </div>
   )
 }
