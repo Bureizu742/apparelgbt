@@ -18,98 +18,98 @@ db.once('open', async () => {
 
   const products = await Product.insertMany([
     {
-      name: 'Item Name 1',
-      description: 'This is a default description',
+      name: 'mini flags',
+      description: 'perfect for pride on the go',
       image: 'assets/misc/minflags.jpeg',
-      price: 24.50,
+      price: 12,
       quantity: 5,
       category: categories[0]._id
     },
     {
-      name: 'Item Name 2',
-      description: 'This is a default description',
+      name: 'sweats set',
+      description: '100% locally sourced cotton sweats and sweater',
       image: 'assets/sets/loungepaired.jpeg',
-      price: 24.51,
+      price: 140,
       quantity: 5,
       category: categories[1]._id
     },
     {
-      name: 'Item Name 3',
-      description: 'This is a default description',
+      name: 'pride flag',
+      description: 'hand-sewn by local designers',
       image: 'assets/misc/flag.jpeg',
-      price: 24.52,
+      price: 40,
       quantity: 5,
       category: categories[2]._id
     },
     {
-      name: 'Item Name 4',
-      description: 'This is a default description',
+      name: 'raw denim',
+      description: 'organically dyed raw denim',
       image: 'assets/bottoms/jeanspair1.jpeg',
-      price: 24.53,
-      quantity: 5,
+      price: 70,
+      quantity: 12,
       category: categories[3]._id
     },
     {
-      name: 'Item Name 5',
-      description: 'This is a default description',
+      name: 'hoodie',
+      description: 'our softest hoodie yet',
       image: 'assets/tops/hoodiespaired.jpeg',
-      price: 24.54,
+      price: 50,
       quantity: 5,
       category: categories[4]._id
     },
     {
-      name: 'Item Name 6',
-      description: 'This is a default description',
-      image: 'assets/misc/flagpin.jpeg',
-      price: 24.54,
+      name: 'flag pin',
+      description: 'mini flag pin',
+      image: 'assets/misc/pin.jpeg',
+      price: 6,
       quantity: 5,
       category: categories[4]._id
     },
     {
-      name: 'Item Name 7',
-      description: 'This is a default description',
-      image: 'assets/tops/tops8.jpeg',
+      name: 'blouse',
+      description: 'light and breezy',
+      image: 'assets/tops/tops8re.jpeg',
       price: 24.54,
       quantity: 5,
       category: categories[0]._id
     },
     {
-      name: 'Item Name 8',
-      description: 'This is a default description',
-      image: 'assets/sets/linenset.jpeg',
+      name: 'linen set',
+      description: 'soft and airy organic linen ',
+      image: 'assets/sets/linensetre.jpeg',
       price: 24.54,
       quantity: 5,
       category: categories[2]._id
     },
     {
-      name: 'Item Name 9',
-      description: 'This is a default description',
-      image: 'assets/misc/pins.jpeg',
+      name: 'pride belt',
+      description: 'colorful and strong',
+      image: 'assets/misc/flagwrapre.jpeg',
       price: 24.54,
       quantity: 5,
       category: categories[2]._id
     },
     {
-      name: 'Item Name 10',
-      description: 'This is a default description',
-      image: 'assets/tops/silktops.jpeg',
+      name: 'silk tops',
+      description: 'from ethically sourced silkworms',
+      image: 'assets/tops/silktopsre.jpeg',
       price: 24.54,
       quantity: 5,
       category: categories[0]._id
     },
     {
-      name: 'Item Name 11',
-      description: 'This is a default description',
-      image: 'assets/acc/rings.jpeg',
-      price: 24.54,
+      name: 'pride ring set',
+      description: 'matching rings',
+      image: 'assets/acc/ringsre.jpeg',
+      price: 42,
       quantity: 5,
       category: categories[3]._id
     },
     {
-      name: 'Item Name 12',
-      description: 'This is a default description',
-      image: 'assets/tops/lovetee.jpeg',
-      price: 24.54,
+      name: 'more love',
+      description: 'mult-color love tee',
+      image: 'assets/tops/loveteere.jpeg',
+      price: 20,
       quantity: 5,
       category: categories[0]._id
     },
