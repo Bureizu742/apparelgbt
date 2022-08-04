@@ -7,7 +7,6 @@ import { useQuery } from '@apollo/client';
 import { UPDATE_PRODUCTS } from '../utils/actions';
 import { QUERY_PRODUCTS } from '../utils/queries';
 import Navbar from './Navbar';
-import Newsletter from './Newsletter';
 import Footer from './Footer';
 
 const Container = styled.div`
@@ -16,7 +15,7 @@ const Container = styled.div`
   grid-auto-rows: auto;
   grid-gap: 20px;
   width: 100vw;
-  height: 100vh;
+  height: 100%;
   row-gap: 100px;
   margin-left: 15px;
   margin-top: 70px;
@@ -67,26 +66,31 @@ function Products() {
     <>
       <Navbar />
       {state.products.length ? (
-        <Container >
-          {filterProducts().map((product) => (
-            <Div>
-              <ProductItem
-                key={product._id}
-                id={product._id}
-                image={product.image}
-                name={product.name}
-                price={product.price}
-                quantity={product.quantity}
-              />
-            </Div>
-          ))}
-        </Container>
+        <>
+        <>
+          <Container >
+            {filterProducts().map((product) => (
+              <Div>
+                <ProductItem
+                  key={product._id}
+                  id={product._id}
+                  image={product.image}
+                  name={product.name}
+                  price={product.price}
+                  quantity={product.quantity}
+                />
+              </Div>
+            ))}
+          </Container>
+        </>
+        <>
+        <Footer />
+        </>
+        </>
       ) : (
         <h3>You haven't added any products yet!</h3>
       )}
       {loading ? <h2> LOADING ...</h2> : null}
-      <Newsletter />
-      <Footer />
     </>
   )
 };

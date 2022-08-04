@@ -10,8 +10,8 @@ import auth from '../utils/auth';
 const Container = styled.div`
  height: 60px;
  margin-bottom: 20px;
- ${mobile({ height: "50px" })}
-`;
+ ${mobile({ height: "50px", width: "100vw" })}
+ `;
 
 const Wrapper = styled.div`
   padding: 10px 20px;
