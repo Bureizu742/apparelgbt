@@ -106,7 +106,7 @@ function Footer() {
         <ContactItem> <Room style={{marginRight: "10px"}} /> 8600 Los Angeles, CA </ContactItem>
         <ContactItem> <Phone style={{marginRight: "10px"}} /> 123-069-0420 </ContactItem>
         <ContactItem> <MailOutline style={{marginRight: "10px"}} /> contactus@apparelgbt.mail </ContactItem>
-        <Payment img src="assets/payment.jpeg" />
+        {/* <Payment img src={process.env.PUBLIC_URL + "assets/payment.jpeg"} /> */}
       </Right>
     </Container>
   )

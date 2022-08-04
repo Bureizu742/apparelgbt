@@ -20,6 +20,8 @@ const CartToggler = styled.div`
   box-shadow: 0 0 1rem rgba(0, 0, 0, .5);
   border-bottom-left-radius: 10px;
   z-index: 2;
+  width: 20%;
+  height: 20%;
 `
 
 const CloseCart = styled.div`
