@@ -69,7 +69,6 @@ const StyledLink = styled(Link)  `
   font-weight: bold;
   color: black;
   text-decoration: none;
-  ${mobile({ fontSize: "24px", justifyContent: "start" })}
 `;
 
 const rainbow_animation = keyframes`
@@ -95,7 +94,7 @@ const NavLink = styled(Link)  `
   justify-content: center;
   align-items: center;
   text-decoration: none;
-  ${mobile({ fontSize: "24px", justifyContent: "space-evenly" })}
+  ${mobile({ fontSize: "24px", display: "flex", justifyContent: "flex-end" })}
 `;
 
 const LinkItem = styled.div`
@@ -105,6 +104,9 @@ const LinkItem = styled.div`
   ${mobile({ fontSize: "12px", marginLeft: "10px" })}
  `;
 
+const LoginContainer = styled.div`
+  ${mobile({ fontSize: "12px", marginLeft: "10px" })}
+`
 function Navbar() {
    document.title = "appareLGBT 🌈" 
   function loggedInNav() {
@@ -120,10 +122,10 @@ function Navbar() {
       )
   } else {
     return (
-      <> 
+      <LoginContainer> 
       <StyledLink to="/signup"> CREATE ACCOUNT </StyledLink>
       <StyledLink to="/login"> LOGIN</StyledLink>
-      </>
+      </LoginContainer>
     )
   }
 }

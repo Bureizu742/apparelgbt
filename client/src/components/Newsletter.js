@@ -13,6 +13,7 @@ const Container = styled.div`
   flex-direction: column;
   color: white;
   margin-top: 250px;
+  ${mobile({ width: "100vw" })}
 `;
 
 const Title = styled.h1`
