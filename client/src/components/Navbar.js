@@ -1,6 +1,6 @@
 import { Search} from '@material-ui/icons';
 import React from 'react';
-import styled from 'styled-components';
+import styled, {keyframes} from 'styled-components';
 import Auth from "../utils/auth";
 import { mobile } from '../responsive'
 import { Link } from "react-router-dom";
@@ -72,7 +72,22 @@ const StyledLink = styled(Link)  `
   ${mobile({ fontSize: "24px", justifyContent: "start" })}
 `;
 
+const rainbow_animation = keyframes`
+  0%,100% {
+      background-position: 0 0;
+  }
+
+  50% {
+      background-position: 100% 0;
+  }
+`  
 const NavLink = styled(Link)  `
+  background: linear-gradient(to right, #6666ff, #0099ff , #00ff00, #ff3399, #6666ff);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: ${rainbow_animation} 6s ease-in-out infinite;
+  background-size: 400% 100%;
   font-weight: bold;
   font-style: italic;
   font-size: 50px;
@@ -80,7 +95,6 @@ const NavLink = styled(Link)  `
   justify-content: center;
   align-items: center;
   text-decoration: none;
-  color: black;
   ${mobile({ fontSize: "24px", justifyContent: "space-evenly" })}
 `;
 
@@ -124,7 +138,7 @@ function Navbar() {
           </SearchContainer>
         </Left>
         <Center> 
-          <NavLink to="/"> appareLGBT 🌈 </NavLink> 
+          <NavLink to="/"> appareLGBT </NavLink> 
             </Center>
         <Right>
           <LinkItem> 

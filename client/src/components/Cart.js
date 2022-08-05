@@ -7,7 +7,7 @@ import CartItem from './CartItems';
 import Auth from '../utils/auth';
 import { useStoreContext } from '../utils/GlobalState';
 import { TOGGLE_CART, ADD_MULTIPLE_TO_CART } from '../utils/actions';
-import { DeleteOutline, ShoppingCartOutlined } from '@material-ui/icons';
+import { ShoppingCartOutlined } from '@material-ui/icons';
 import styled from 'styled-components';
 
 const CartToggler = styled.div`
