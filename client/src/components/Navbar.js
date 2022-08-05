@@ -69,7 +69,7 @@ const StyledLink = styled(Link)  `
   font-weight: bold;
   color: black;
   text-decoration: none;
-  ${mobile({ display: "none" })}
+  ${mobile({ fontSize: "24px", justifyContent: "start" })}
 `;
 
 const NavLink = styled(Link)  `
@@ -81,7 +81,7 @@ const NavLink = styled(Link)  `
   align-items: center;
   text-decoration: none;
   color: black;
-  ${mobile({ fontSize: "24px", justifyContent: "center" })}
+  ${mobile({ fontSize: "24px", justifyContent: "space-evenly" })}
 `;
 
 const LinkItem = styled.div`
