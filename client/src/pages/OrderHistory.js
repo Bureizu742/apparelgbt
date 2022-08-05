@@ -59,6 +59,7 @@ const StyledLink = styled(Link)`
 `;
 
 function OrderHistory() {
+  document.title = "Order History || appareLGBT 🌈"
   const { data } = useQuery(QUERY_USER);
   let user;
 

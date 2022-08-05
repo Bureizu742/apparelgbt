@@ -20,7 +20,7 @@ const StyledLink = styled(Link)`
   margin-left: 25px;
   color: black;
   text-decoration: none;
-  margin-bottom: 15px
+  margin-bottom: 15px;
 `;
 const Placed = styled.h1`
   display: flex;
@@ -36,6 +36,7 @@ const Redir = styled.h3`
 `;
 
 function Success() {
+  document.title = "Success! || appareLGBT 🌈"
   const [addOrder] = useMutation(ADD_ORDER);
 
   useEffect(() => {
