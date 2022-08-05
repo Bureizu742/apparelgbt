@@ -92,7 +92,9 @@ const LinkItem = styled.div`
  `;
 
 function Navbar() {
+   document.title = "appareLGBT 🌈" 
   function loggedInNav() {
+   
     if (Auth.loggedIn()) {
       return (
         <>
@@ -122,7 +124,7 @@ function Navbar() {
           </SearchContainer>
         </Left>
         <Center> 
-          <NavLink to="/"> appareLGBT </NavLink> 
+          <NavLink to="/"> appareLGBT 🌈 </NavLink> 
             </Center>
         <Right>
           <LinkItem> 

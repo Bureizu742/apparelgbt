@@ -78,6 +78,7 @@ function Login () {
   };
 
   const handleChange = (event) => {
+    document.title = "Login || appareLGBT 🌈"
     const { name, value } = event.target;
     setFormState({
       ...formState,

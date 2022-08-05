@@ -66,6 +66,7 @@ const StyledLink = styled(Link)  `
   text-decoration: none;
 `
 function Signup(props) {
+  document.title = "Sign-up || appareLGBT 🌈" 
   const [formState, setFormState] = useState({ username: '', email: '', password: '' });
   const [addUser] = useMutation(ADD_USER);
 
