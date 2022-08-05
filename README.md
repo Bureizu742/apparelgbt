@@ -1,57 +1,34 @@
-# Day One: Setup/Server 📦
-*   Clone starter code, repos installed locally
-*	Models: 
-  	* Models written for category, order, and product (Patrick) ✔️
-* Schema: 
-  	 * Type def for product, order, and checkout (Charles) ✔️
-  	* Products. order, and checkout added to type def query (Jala)  ✔️
+# TEAM 05-Group Project 3: Final Project
 
-  	* addOrder, updateUser, and updateProduct added to type def mutations (Jala) ✔️
+# AppareLGBT
 
-  	* Query for categories, products, and order (Connor) ✔️ 
-  	Stripe API checkout query (Group) ✔️
+## Table of Contents
 
-  	* addOrder, updateUser, and updateProduct added to query mutations (Connor) ✔️
-*	Seeders: (Whoever finishes first) ✔️
-  	* Seed categories ✔️
-  	* Seed products ✔️
-    * Seed users ✔️
+1. [Description](#description)
+2. [Resources](#resources)
+3. [Visuals](#visuals)
+4. [Author and Aknowledgement](#author-and-aknowledgements)
 
-# Day Two: 💻
-*	HEROKU TEST DEPLOY DAY (Group)
-*	Settle site theme (Group, done no  later than 11am)✔️
-*	Import assets (Group)✔️
-*	Components (Written, not styled):
-    * Navbar/banner, carousel, cart/cart items (Jala/Connor) ✔️
-    * Product items, product list (Jala/Connor) ✔️
-    * Category menu, footer ✔️(Patrick)
-*	Utils: 
-    * Queries, mutations (Jala) ✔️
-  	* Actions, helpers (Patrick) ✔️ 
-    * Auth, global state, reducers (Charles) ✔️
-   
+## User Story
 
-# Day Three: 💻/🎨
-*	Test Stripe Functionality 
-*	Pages (Written, not styled): 
-    * sign up/login (Jala/Charles) ✔️
-    * 404, success (Charles) ✔️
-    * Detail (Jala) ✔️
-*	Component and page styling (Style your component, alternate screen share)
+AS a member of the LGBTQ+ community
+We WANT an online store that caters to our styles and needs
 
-# Day Three: 🎨
-*   HEROKU DEPLOYMENT (FIRST THING AM)✔️
-*   Checkout Page ✔️
-*   Product page fixes, styling (Jala)✔️
-*   Detail page ✔️
-*   Category Menu (Charles) (TBD) 
-*   Order history (Patrick)
-*   Service worker (Connor) 
-*   Delete button (Connor) 
-*   Footer Links (Patrick) 
-*	Component and page styling
-*	Write/style presentation 
 
-# Day Four: 🧹
-*	Light clean-up
-*	Practice presenting 
+## Description
+
+AppareLGBT is an online store that caters to the needs and styles of the LGBTQ+ community in a sustainable way that is outside the traditional performative corporate Pride.
+
+## Resources
+
+* [Live Site](https://dry-brook-40661.herokuapp.com/)
+
+* [Repository](https://github.com/Bureizu742/apparelgbt)
+
+## Visuals
+
+![AppareLGBT](./screenshot/AppareLGBT-Screenshot.png)
+
+## Authors and Acknowledgements
+
+Code created & optimized by UNCC Coding Bootcamp Students - Connor Thompson, Charles Young, Lillian (Patrick) Long, and Jala Unterreiner
