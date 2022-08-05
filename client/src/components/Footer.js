@@ -7,6 +7,8 @@ import { mobile } from "../responsive";
 const Container = styled.div`
   display: flex;
   ${mobile({ flexDirection: "column", width: "30px"})}
+  background-color: black;
+  color: white;
 `;
 
 const Left = styled.div`
@@ -40,6 +42,7 @@ const SocIcon = styled.div`
 `;
 
 const Center = styled.div`
+  text-align: center;
   flex:1;
   padding: 20px;
   ${mobile({ display: "none" })}
@@ -81,10 +84,10 @@ const StyledLink = styled(Link)`
   cursor: pointer;
   margin-left: 25px;
   font-weight: bold;
-  color: black;
+  color: white;
   text-decoration: none;
   &:hover {
-    color: black;
+    color: #778899;
   }
   ${mobile({ fontSize: "12px", marginLeft: "10px" })}
 `;

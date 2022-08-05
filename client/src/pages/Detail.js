@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
-import Cart from '../components/Cart';
 import { useStoreContext } from '../utils/GlobalState';
 import {
   REMOVE_FROM_CART,
@@ -11,10 +10,11 @@ import {
 } from '../utils/actions';
 import { QUERY_PRODUCTS } from '../utils/queries';
 import { idbPromise } from '../utils/helpers';
-import {ShoppingCartOutlined, DeleteOutline } from '@material-ui/icons';
+import {ShoppingCartOutlined } from '@material-ui/icons';
 import styled from 'styled-components';
 import Navbar from '../components/Navbar';
 import Broadcast from '../components/Broadcast';
+import Footer from '../components/Footer';
 
 const Wrapper = styled.div`
   padding: 50px;
@@ -24,15 +24,19 @@ const Wrapper = styled.div`
 const Container = styled.div`
   `
 const Info = styled.div`
+  padding: 10px;
   flex: 1;
   margin-left: 500px;
   margin-top: 40px;
+  `
+const Total = styled.p`
+ padding-right: 50px;  
   `
 const ImageContainer = styled.div`
   margin-top: 20px;
   flex: 1;
   width: 50vw;
-  height: 50vh;
+  height: 40%;
     `
 const StyledLink = styled(Link)  `
   font-size: 20px;
@@ -118,14 +122,12 @@ function Detail() {
           <Info> 
           <h2>{currentProduct.name}</h2>
           <p>{currentProduct.description}</p>
+          <Total> 
           <p>
-            <strong>Price:</strong>${currentProduct.price}{' '}
+            <strong>Price: </strong>${currentProduct.price}{'    '}
+            </p>
+            </Total>
             <ShoppingCartOutlined onClick={addToCart}></ShoppingCartOutlined>
-            <DeleteOutline
-              disabled={!cart.find((p) => p._id === currentProduct._id)}
-              onClick={removeFromCart}>
-            </DeleteOutline>
-          </p>
         </Info>
         <ImageContainer> 
           <img
@@ -138,6 +140,7 @@ function Detail() {
         </Container>
       ) : null}
       {loading ? <h2> LOADING...</h2> : null}
+      <Footer />
           </>
   );
 }

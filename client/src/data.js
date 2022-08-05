@@ -1,11 +1,7 @@
 import path from 'path';
 const { PUBLIC_URL } = process.env;
-const imgOne = `${path.join(PUBLIC_URL,'assets/misc/minflags.jpeg')}`;
 const imgTwo = `${path.join(PUBLIC_URL,'assets/sets/loungepaired.jpeg')}`;
 const imgThree = `${path.join(PUBLIC_URL,'assets/bottoms/denim.jpeg')}`;
-const jeans = `${path.join(PUBLIC_URL,'assets/bottoms/jeanspair1.jpeg')}`
-const tops = `${path.join(PUBLIC_URL,'assets/tops/hoodiespaired.jpeg')}`
-const sets = `${path.join(PUBLIC_URL,'assets/sets/flagsuit.jpeg')}`
 const set1 = `${path.join(PUBLIC_URL,'assets/sets/linenset.jpeg')}`
 const mset1 = `${path.join(PUBLIC_URL,'assets/sets/loungepaired2.jpeg')}`
 const miset2 = `${path.join(PUBLIC_URL,'assets/sets/suits.jpeg')}`
@@ -15,9 +11,6 @@ const top3 = `${path.join(PUBLIC_URL,'assets/tops/noshirtpaired.jpeg')}`
 const rainbow = `${path.join(PUBLIC_URL,'assets/tops/rainbowSweater.jpeg')}`
 const sweatersgroup = `${path.join(PUBLIC_URL,'assets/tops/sweatersgroup.jpeg')}`
 const denimchair = `${path.join(PUBLIC_URL,'assets/bottoms/denimchair.jpeg')}`
-// const jeans2 = `${path.join(PUBLIC_URL,'assets/misc/stickers.jpeg')}`
-// const wsocial = `${path.join(PUBLIC_URL,'assets/misc/nonbracelet.jpeg')}`
-// const jeans1 = `${path.join(PUBLIC_URL,'assets/misc/plusflag.jpeg')}`
 
 export const carouselItems = [
   {
