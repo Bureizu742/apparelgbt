@@ -16,7 +16,7 @@ const Container = styled.div`
 
 function Broadcast() {
   return (
-    <Container> 40% OF ALL ORDERS ARE DONATED TO THE TREVOR PROJECT.</Container>
+    <Container> 40% OF ALL PROCEEDS ARE DONATED TO THE TREVOR PROJECT.</Container>
   )
 }
 
