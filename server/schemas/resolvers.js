@@ -58,12 +58,25 @@ const resolvers = {
       const line_items = [];
 
       const { products } = await order.populate('products');
-
+      // we need a funciton that finds the image in the ezimage folder
+      function findImage(name) {
+        // first thing is we translate the name provided to our image structure ("mini flags") => "mini_flags.jpeg"
+      // find and replace any " " with "_"
+      // concatenate underscoredName with ".jpeg"
+      // return the source for image => `./assets/ezimages/${underscoredWithJpegExtension}` || default image
+      }
+// this map goes thru all the new products in this new order and adds images key to each product
+      let updatedProducts = products.map(product => {
+        return {
+          ...product,
+          images: findImage(product.name)
+        }
+      })
       for (let i = 0; i < products.length; i++) {
         const product = await stripe.products.create({
           name: products[i].name,
           description: products[i].description,
-          images: [`${url}/images/${products[i].image}`]
+          images: [`${url}/assets/${products[i].image}`]
         });
 
         const price = await stripe.prices.create({
